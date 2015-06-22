@@ -1367,6 +1367,9 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <segue destination="h4C-eR-oSt" kind="show" id="Foo-J1-xoO"/>
+                                                                </connections>
                                                             </button>
                                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </barButtonItem>
@@ -1434,7 +1437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpO-bK-vaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2708.5" y="294.5"/>
+            <point key="canvasLocation" x="2699.5" y="588.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="1Is-EL-6GJ">
@@ -1461,14 +1464,17 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Detalhes do serviço" id="Bw9-5W-jkb">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="35f-51-TRh">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fng-6m-20Q">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="s18-3q-r9X">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="INE-Xy-5FG">
                                                 <rect key="frame" x="-23" y="-15" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Voltar">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="h4C-eR-oSt" kind="show" id="itK-Ab-3Gl"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1528,7 +1534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZY-sq-dOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2708.5" y="1137.5"/>
+            <point key="canvasLocation" x="2699.5" y="1375.5"/>
         </scene>
         <!--Detalhes do serviço-->
         <scene sceneID="e1m-61-PL7">
@@ -1712,8 +1718,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Detalhes do Profissional" id="Pwb-yj-zSN">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="nAb-4k-b4Y">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="nAb-4k-b4Y">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="voltar:" destination="zEy-WP-a2n" id="5cb-gj-e7b"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="OK" id="WNC-1S-5q3">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1970,6 +1979,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Foo-J1-xoO"/>
         <segue reference="Bkc-h6-8RX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

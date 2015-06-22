@@ -33,6 +33,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self alerta];
+    
 }
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -78,6 +79,7 @@
     cell.labelTitle.layer.shadowRadius = 1.0f;
     return cell;
     
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -94,6 +96,7 @@
         HOOAgendaMesmoEnderecoViewController *controller = (HOOAgendaMesmoEnderecoViewController *)segue.destinationViewController;
         
         controller.tipoDeServico = tipoDeServico;
+        
     }
 }
 
@@ -104,6 +107,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HOOLoginViewController *viewController = (HOOLoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"login"];
         [self presentViewController:viewController animated:YES completion:nil];
+        
     }
 }
 
