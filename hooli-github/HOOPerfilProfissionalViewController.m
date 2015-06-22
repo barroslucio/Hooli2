@@ -61,9 +61,49 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(estadoTextField)]];
+    
+    cidadeTextField = [UIFloatLabelTextField new];
+    [cidadeTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    cidadeTextField.floatLabelActiveColor = [UIColor orangeColor];
+    cidadeTextField.placeholder = @"Email";
+    cidadeTextField.delegate = self;
+    [self.subviewCidade addSubview:cidadeTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cidadeTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(cidadeTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cidadeTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(cidadeTextField)]];
+    
+    enderecoTextField = [UIFloatLabelTextField new];
+    [enderecoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    enderecoTextField.floatLabelActiveColor = [UIColor orangeColor];
+    enderecoTextField.placeholder = @"Email";
+    enderecoTextField.delegate = self;
+    [self.subviewEndereco addSubview:enderecoTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[enderecoTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[enderecoTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
     PFUser *user = [PFUser currentUser];
     emailTextField.text = [user objectForKey:@"email"];
-    
+    estadoTextField.text = [user objectForKey:@"estado"];
+    cidadeTextField.text = [user objectForKey:@"cidade"];
+    enderecoTextField.text = [user objectForKey:@"endereco"];
+
+
     [self requisicaoServicos];
     
     
