@@ -31,9 +31,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self alerta];
-}
+
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -78,6 +76,41 @@
     cell.labelTitle.layer.shadowRadius = 1.0f;
     return cell;
     
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+    {
+        tipoDeServico = 1;
+    }
+    else if (indexPath.row == 1)
+    {
+        tipoDeServico = 2;
+
+    }
+    else if (indexPath.row == 2)
+    {
+        tipoDeServico = 3;
+
+    }
+    else if (indexPath.row == 3)
+    {
+        tipoDeServico = 4;
+
+    }
+    else if (indexPath.row == 4)
+    {
+        tipoDeServico = 5;
+
+    }
+    else if (indexPath.row == 5)
+    {
+        tipoDeServico = 6;
+    }
+    [self alerta];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -94,6 +127,7 @@
         HOOAgendaMesmoEnderecoViewController *controller = (HOOAgendaMesmoEnderecoViewController *)segue.destinationViewController;
         
         controller.tipoDeServico = tipoDeServico;
+        
     }
 }
 
@@ -104,6 +138,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HOOLoginViewController *viewController = (HOOLoginViewController *)[storyboard instantiateViewControllerWithIdentifier:@"login"];
         [self presentViewController:viewController animated:YES completion:nil];
+        
     }
 }
 

@@ -19,6 +19,7 @@
 - (IBAction)agendaServico:(id)sender;
 
 @property (retain, nonatomic)  UIDatePicker *pickerDate;
+- (IBAction)voltar:(id)sender;
 
 @property (nonatomic) NSString *data;
 @property (nonatomic) int tipoDeServico;

@@ -22,7 +22,9 @@
 @implementation HOOAgendaMesmoEnderecoViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+
+    NSLog(@"%d", self.tipoDeServico);
+    
     if (self.tipoDeServico == 1){
         [self.servico setText:@"Tipo de serviço: Alvenaria"];
         tipoServico = @"Alvenaria";
@@ -175,11 +177,21 @@
 
 }
 
-- (void)segueViewController{
+- (void)segueViewController
+{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HOOHistoricoClienteViewController *viewController = (HOOHistoricoClienteViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HistoricoCliente"];
     [self presentViewController:viewController animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
     
 }
+
+- (IBAction)voltar:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 @end
