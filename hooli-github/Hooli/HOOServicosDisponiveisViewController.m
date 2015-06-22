@@ -66,19 +66,19 @@
     if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]]){
         [servicosDisponiveis whereKey:@"tipo" equalTo:@"Alvenaria"];
     }
-    else if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]]){
+    if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]]){
         [servicosDisponiveis whereKey:@"tipo" equalTo:@"Pintura"];
     }
-    else if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]]){
+    if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]]){
         [servicosDisponiveis whereKey:@"tipo" equalTo:@"Limpeza"];
     }
-    else if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]]){
+    if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]]){
         [servicosDisponiveis whereKey:@"tipo" equalTo:@"Chaveiro"];
     }
-    else if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]]){
+    if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]]){
         [servicosDisponiveis whereKey:@"tipo" equalTo:@"Hidráulica"];
     }
-    else if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]]){
+    if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]]){
         [servicosDisponiveis whereKey:@"tipo" equalTo:@"Elétrica"];
     }
     
@@ -91,7 +91,7 @@
     
     HOOServicosDisponiveisTVCell   *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    //cell.tipoServico.text = [[self.arrayServicos[indexPath.row] objectForKey:@"valor"] stringValue];
+    cell.tipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"valor"];
     cell.dataServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
 
     return cell;
