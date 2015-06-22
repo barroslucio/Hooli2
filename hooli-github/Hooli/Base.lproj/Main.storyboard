@@ -1064,7 +1064,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="vMn-RZ-lgh"/>
+                    <tabBarItem key="tabBarItem" title="Histórico" id="vMn-RZ-lgh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="segmentedControl" destination="v35-hp-o2b" id="h2C-y4-xIf"/>
@@ -1224,7 +1224,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="how-kv-AA9"/>
+                    <tabBarItem key="tabBarItem" title="Serviços disponíveis" id="how-kv-AA9"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableview" destination="FxH-fC-Jzs" id="fgz-41-dyC"/>
@@ -1305,8 +1305,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Jlx-KJ-5Sm" kind="relationship" relationship="viewControllers" id="Bkc-h6-8RX"/>
                         <segue destination="nGh-rb-Ocm" kind="relationship" relationship="viewControllers" id="FjN-oC-tZW"/>
+                        <segue destination="Jlx-KJ-5Sm" kind="relationship" relationship="viewControllers" id="Bkc-h6-8RX"/>
                         <segue destination="9l7-nz-Rwa" kind="relationship" relationship="viewControllers" id="zgj-us-qXg"/>
                     </connections>
                 </tabBarController>
@@ -1759,7 +1759,7 @@
             </objects>
             <point key="canvasLocation" x="1544" y="1740"/>
         </scene>
-        <!--Item-->
+        <!--Perfil-->
         <scene sceneID="6M8-Pv-RCd">
             <objects>
                 <viewController id="9l7-nz-Rwa" customClass="HOOPerfilProfissionalViewController" sceneMemberID="viewController">
@@ -1779,15 +1779,17 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Profissional" id="tPX-5e-Fs0">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="eOg-My-9hg">
-                                            <connections>
-                                                <action selector="voltarButton:" destination="9l7-nz-Rwa" id="GWz-7O-ygJ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="M8T-rP-YW9">
-                                            <connections>
-                                                <action selector="actionSave:" destination="9l7-nz-Rwa" id="vpC-ZC-qKV"/>
-                                            </connections>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="JM9-lA-f1o">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j76-nC-KNw">
+                                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="salvar:" destination="9l7-nz-Rwa" eventType="touchUpInside" id="eZW-Zw-B7g"/>
+                                                </connections>
+                                            </button>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1935,7 +1937,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5fu-Dd-nsQ"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" id="5fu-Dd-nsQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="subviewAlvenaria" destination="jH5-rz-r8O" id="wDA-d3-YPA"/>
@@ -1964,7 +1966,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bkc-h6-8RX"/>
+        <segue reference="P2G-XM-n11"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
