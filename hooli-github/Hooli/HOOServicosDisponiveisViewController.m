@@ -91,7 +91,7 @@
     
     HOOServicosDisponiveisTVCell   *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.tipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"valor"];
+    cell.tipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
     cell.dataServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
 
     return cell;
