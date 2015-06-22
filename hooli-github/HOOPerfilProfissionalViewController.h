@@ -31,4 +31,6 @@
 @property (strong, nonatomic) IBOutlet UISwitch *swLimpeza;
 @property (strong, nonatomic) IBOutlet UISwitch *swPintura;
 
+- (IBAction)salvar:(id)sender;
+
 @end
