@@ -1368,7 +1368,7 @@
                                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="h4C-eR-oSt" kind="show" id="Foo-J1-xoO"/>
+                                                                    <action selector="voltar:" destination="bhD-7x-8tV" eventType="touchUpInside" id="fVw-7p-ziD"/>
                                                                 </connections>
                                                             </button>
                                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1473,7 +1473,7 @@
                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="h4C-eR-oSt" kind="show" id="itK-Ab-3Gl"/>
+                                                    <action selector="voltar:" destination="boi-27-8xf" eventType="touchUpInside" id="4cz-mL-aTz"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -1534,7 +1534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZY-sq-dOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2699.5" y="1375.5"/>
+            <point key="canvasLocation" x="2694.5" y="1306.5"/>
         </scene>
         <!--Detalhes do serviço-->
         <scene sceneID="e1m-61-PL7">
@@ -1658,7 +1658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGp-kc-a6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2699.5" y="1862.5"/>
+            <point key="canvasLocation" x="2699.5" y="2098.5"/>
         </scene>
         <!--Detalhes Profissional View Controller-->
         <scene sceneID="xZ5-XZ-6nN">
@@ -1979,7 +1979,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Foo-J1-xoO"/>
         <segue reference="Bkc-h6-8RX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

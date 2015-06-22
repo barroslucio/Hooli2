@@ -20,6 +20,7 @@
 @property (nonatomic) NSString *hora;
 @property (nonatomic) NSString *data;
 @property (nonatomic) int tipoDeServico;
+- (IBAction)voltar:(id)sender;
 
 
 @property (strong, nonatomic) IBOutlet UITextView *descricaoField;
