@@ -79,9 +79,10 @@
         
         PFObject *servico = [PFObject objectWithClassName:@"Servico"];
         [servico setObjectId:[self.arrayServicosEscolhido[indexPath.row] objectForKey:@"objectId"]];
-        
-        cell.textLabel.text = servico[@"dataServico"];
+        NSLog(@"\n-----%@", [self.arrayServicosEscolhido[indexPath.row] objectForKey:@"tipo"]);
+        cell.textLabel.text = [self.arrayServicosEscolhido[indexPath.row] objectForKey:@"dataServico"];
         cell.detailTextLabel.text = [[self.arrayServicosEscolhido[indexPath.row] objectForKey:@"valor"] stringValue];
+        
 
     } else {
 
@@ -112,22 +113,29 @@
     [super didReceiveMemoryWarning];
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    HOODetalhesHistoricoServicoProfissionalViewController *destinationViewController = [segue destinationViewController];
-//    
-//    
-//    if ([segue.identifier isEqual:@"segueDetalhes"]) {
-//        
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSString *idServico = [self.arrayServicos[indexPath.row] objectId];
-//        
-//        destinationViewController.idServico = idServico;
-//    } else {
-//        destinationViewController.idServico = nil;
-//        
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    HOODetalhesHistoricoServicoProfissionalViewController *destinationViewController = [segue destinationViewController];
+    
+    
+    if ([segue.identifier isEqual:@"detalhes"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSString *idServico = [self.arrayServicosPendentes[indexPath.row] objectId];
+
+        if (type==0) {
+            idServico = [self.arrayServicosEscolhido[indexPath.row] objectId];
+
+        }
+        else {
+            idServico = [self.arrayServicosPendentes[indexPath.row] objectId];
+
+        }
+        destinationViewController.idServico = idServico;
+    } else {
+        destinationViewController.idServico = nil;
+        
+    }
+}
 
 
 - (IBAction)segmentedAction:(id)sender {

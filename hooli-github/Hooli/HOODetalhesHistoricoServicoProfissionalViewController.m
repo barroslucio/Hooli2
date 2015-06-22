@@ -20,13 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initProperties];
-//    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-//    [query whereKey:@"objectId" equalTo:self.idServico];
-//    PFObject *object =[query getFirstObject];
-//    
-//    self.labelTipo.text = object[@"tipo"];
-//    self.labelData.text = [NSString stringWithFormat: @"Date: %@", object[@"dataServico"]];
-//    self.textViewDescricao.text = object[@"descricao"];
+    NSLog(@"\n---%@", self.idServico);
+    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+    [query whereKey:@"objectId" equalTo:self.idServico];
+    PFObject *object =[query getFirstObject];
+    
+    self.labelTipo.text = object[@"tipo"];
+    self.labelData.text = [NSString stringWithFormat: @"Date: %@", object[@"dataServico"]];
+    self.textViewDescricao.text = object[@"descricao"];
 }
 - (void)initProperties{
     self.textViewDescricao.editable = NO;
