@@ -12,6 +12,7 @@
 @interface HOODetalhesHistoricoServicoProfissionalViewController : UIViewController
 
 @property (nonatomic) NSString *idServico;
+@property (nonatomic) NSString *idProposta;
 + (NSString *)dateFormatter:(NSString *)data;
 - (IBAction)voltar:(id)sender;
 

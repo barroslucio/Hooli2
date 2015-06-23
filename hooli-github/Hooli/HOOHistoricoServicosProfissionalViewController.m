@@ -11,6 +11,8 @@
 @interface HOOHistoricoServicosProfissionalViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray *arrayIdServicosPendentes;
+    NSMutableArray *arrayIdPropostaEscolhida;
+
     int type; //gambView pra escolher qual array vai ser mostrado na tableView
 
 }
@@ -30,6 +32,8 @@
     [self initProperties];
     [self requisicoes];
     arrayIdServicosPendentes = [[NSMutableArray alloc] init];
+    arrayIdPropostaEscolhida = [[NSMutableArray alloc] init];
+
 }
 - (void)initProperties{
     type = 0;
@@ -88,6 +92,8 @@
         [query whereKey:@"servico" equalTo:object];
         PFObject *proposta = [query getFirstObject];
         
+        [arrayIdPropostaEscolhida addObject:proposta];
+        
         cell.textLabel.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:object[@"dataServico"]];
         
         cell.detailTextLabel.text = [proposta[@"valor"] stringValue];
@@ -103,7 +109,8 @@
         [queryServico whereKey:@"objectId" equalTo:[servico objectId]]; //Faz requisição do serviço que tem objectId igual ao objeto do array de propostas
         PFObject *objectServico = [queryServico getFirstObject];
         [arrayIdServicosPendentes addObject:objectServico];
-        cell.textLabel.text = objectServico[@"dataServico"];
+        
+        cell.textLabel.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:objectServico[@"dataServico"]];
         
         cell.detailTextLabel.text = [[self.arrayServicosPendentes[indexPath.row] objectForKey:@"valor"] stringValue];
         
@@ -133,17 +140,22 @@
     
     if ([segue.identifier isEqual:@"detalhes"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *idServico = [self.arrayServicosPendentes[indexPath.row] objectId];
+        NSString *idServico;
+        NSString *idProposta;
+
 
         if (type==0) {
             idServico = [self.arrayServicosEscolhido[indexPath.row] objectId];
+            idProposta = [arrayIdPropostaEscolhida[indexPath.row] objectId];
 
         }
         else {
+            idProposta = [self.arrayServicosPendentes[indexPath.row] objectId];
             idServico = [arrayIdServicosPendentes[indexPath.row] objectId];
 
         }
         destinationViewController.idServico = idServico;
+        destinationViewController.idProposta = idProposta;
     } else {
         destinationViewController.idServico = nil;
         

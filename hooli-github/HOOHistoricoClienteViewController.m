@@ -7,7 +7,7 @@
 //
 
 #import "HOOHistoricoClienteViewController.h"
-
+#import "HOODetalhesHistoricoServicoProfissionalViewController.h"
 @interface HOOHistoricoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *arrayServicos;
@@ -58,7 +58,7 @@
     }
 
     cell.labelTipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
-    cell.labelDataServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
+    cell.labelDataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[self.arrayServicos[indexPath.row] objectForKey:@"dataServico"]];
     return cell;
     
 }
