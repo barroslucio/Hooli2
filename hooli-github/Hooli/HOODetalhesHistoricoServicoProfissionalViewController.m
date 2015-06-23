@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initProperties];
-    NSLog(@"\n---%@", self.idServico);
+    NSLog(@"\n---teste%@", self.idServico);
     PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
     [query whereKey:@"objectId" equalTo:self.idServico];
     PFObject *object =[query getFirstObject];
