@@ -1264,11 +1264,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-4L-inL">
-                                <rect key="frame" x="139" y="347" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-je-heN">
                                 <rect key="frame" x="133" y="436" width="108" height="30"/>
                                 <state key="normal" title="Fazer proposta!">
@@ -1279,6 +1274,15 @@
                                     <action selector="enviarProposta:" destination="tI3-SF-3sh" eventType="touchUpInside" id="TpF-S4-gwN"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IeB-hV-Zo0">
+                                <rect key="frame" x="19" y="189" width="336" height="62"/>
+                                <color key="backgroundColor" red="0.88617759939999996" green="0.88615107540000004" blue="0.88616609570000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-4L-inL">
+                                <rect key="frame" x="139" y="319" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1286,6 +1290,7 @@
                     <connections>
                         <outlet property="dataServico" destination="Sxd-Qs-XRg" id="cSl-Yw-b4a"/>
                         <outlet property="horaServico" destination="6Sg-rH-ZIy" id="DZH-ie-NEg"/>
+                        <outlet property="subviewValor" destination="IeB-hV-Zo0" id="zGX-qH-EZg"/>
                         <outlet property="tipoServico" destination="Tkh-vG-Fwy" id="0QO-In-EzS"/>
                         <outlet property="valorField" destination="iXV-4L-inL" id="aeU-f5-1Ah"/>
                     </connections>
@@ -1314,10 +1319,10 @@
             </objects>
             <point key="canvasLocation" x="1494" y="-1252"/>
         </scene>
-        <!--Agenda Outro Endereco View Controller-->
+        <!--Agendar em outro endereço-->
         <scene sceneID="JhU-u3-pLg">
             <objects>
-                <viewController id="bhD-7x-8tV" customClass="HOOAgendaOutroEnderecoViewController" sceneMemberID="viewController">
+                <viewController title="Agendar em outro endereço" id="bhD-7x-8tV" customClass="HOOAgendaOutroEnderecoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xWj-mu-751"/>
                         <viewControllerLayoutGuide type="bottom" id="sPx-3D-Bfp"/>
@@ -1332,11 +1337,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DF8-eV-OY5" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="976"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pt7-Oi-ftI">
-                                                <rect key="frame" x="23" y="195" width="320" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Endereço do serviço:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTo-Ey-hYA">
                                                 <rect key="frame" x="23" y="158" width="320" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1398,11 +1398,17 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data do serviço: dd/mm/aaaa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ndO-MJ-Dkp">
-                                                <rect key="frame" x="22" y="246" width="320" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ky5-HB-qAR">
+                                                <rect key="frame" x="6" y="186" width="361" height="52"/>
+                                                <color key="backgroundColor" red="0.88617759939999996" green="0.88615107540000004" blue="0.88616609570000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3A-xI-XJh">
+                                                <rect key="frame" x="6" y="251" width="361" height="53"/>
+                                                <color key="backgroundColor" red="0.88617759939999996" green="0.88615107540000004" blue="0.88616609570000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1430,9 +1436,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="descricaoField" destination="cvf-mh-Va1" id="4Xj-oy-Yv5"/>
-                        <outlet property="enderecoField" destination="pt7-Oi-ftI" id="czA-uO-bCm"/>
                         <outlet property="servico" destination="SmB-D5-lto" id="J67-UF-k9L"/>
-                        <outlet property="textFieldDate" destination="ndO-MJ-Dkp" id="ty2-xe-phO"/>
+                        <outlet property="subviewData" destination="r3A-xI-XJh" id="DiD-xv-6Hd"/>
+                        <outlet property="subviewEndereco" destination="ky5-HB-qAR" id="yc3-NR-REF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpO-bK-vaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

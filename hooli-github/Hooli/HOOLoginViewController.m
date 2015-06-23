@@ -53,6 +53,7 @@
     senhaTextField.floatLabelActiveColor = [UIColor orangeColor];
     senhaTextField.placeholder = @"Senha";
     senhaTextField.delegate = self;
+    senhaTextField.secureTextEntry = YES;
     [self.subviewSenha addSubview:senhaTextField];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[senhaTextField]-0-|"

@@ -10,6 +10,7 @@
 
 @interface HOOHistoricoServicosProfissionalViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
+    NSMutableArray *arrayIdServicosPendentes;
     int type; //gambView pra escolher qual array vai ser mostrado na tableView
 
 }
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     [self initProperties];
     [self requisicoes];
+    arrayIdServicosPendentes = [[NSMutableArray alloc] init];
 }
 - (void)initProperties{
     type = 0;
@@ -47,8 +49,10 @@
     NSArray *pendentesArray = [queryPendentes findObjects];
     NSMutableArray *pendentesMutableArray = [@[] mutableCopy];
     for (NSDictionary *object in pendentesArray) {
-        PFObject *proposta = (PFObject *)object[@"serviço"];
-        if ([self servicosEscolhidos:pendentesArray senvicoPendente:proposta]) {
+        
+        PFObject *proposta = (PFObject *)object[@"servico"];
+
+        if ([self servicosEscolhidos:self.arrayServicosEscolhido senvicoPendente:proposta] == YES) {
             [pendentesMutableArray addObject:object];
         }
     }
@@ -61,9 +65,11 @@
 - (BOOL)servicosEscolhidos:(NSArray *)escolhidos senvicoPendente:(PFObject *)pendente{
 
     for (NSDictionary *servico in escolhidos) {
-        if ([servico[@"objectId"] isEqual:[pendente objectId]]) {
+        
+        if ([servico isEqual:pendente]) {
             return NO;
         }
+
     }
     return YES;
 
@@ -77,23 +83,30 @@
     
     if (type==0) {
         
-        PFObject *servico = [PFObject objectWithClassName:@"Servico"];
-        [servico setObjectId:[self.arrayServicosEscolhido[indexPath.row] objectForKey:@"objectId"]];
-        NSLog(@"\n-----%@", [self.arrayServicosEscolhido[indexPath.row] objectForKey:@"tipo"]);
-        cell.textLabel.text = [self.arrayServicosEscolhido[indexPath.row] objectForKey:@"dataServico"];
-        cell.detailTextLabel.text = [[self.arrayServicosEscolhido[indexPath.row] objectForKey:@"valor"] stringValue];
+        PFObject *object = self.arrayServicosEscolhido[indexPath.row]; //Dicionário recebe o objeto do array de propostas.
+        PFQuery *query = [PFQuery queryWithClassName:@"Proposta"];
+        [query whereKey:@"servico" equalTo:object];
+        PFObject *proposta = [query getFirstObject];
+        
+        cell.textLabel.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:object[@"dataServico"]];
+        
+        cell.detailTextLabel.text = [proposta[@"valor"] stringValue];
         
 
     } else {
+        
+        NSLog(@"\n-%@", [self.arrayServicosPendentes[indexPath.row] objectId]);
 
         NSDictionary *object = self.arrayServicosPendentes[indexPath.row]; //Dicionário recebe o objeto do array de propostas.
         PFObject *servico = (PFObject *) object[@"servico"]; //PFobject recebe o campo "servico" da classe Proposta
         PFQuery *queryServico = [PFQuery queryWithClassName:@"Servico"];
         [queryServico whereKey:@"objectId" equalTo:[servico objectId]]; //Faz requisição do serviço que tem objectId igual ao objeto do array de propostas
-        NSArray *dataServico = [queryServico findObjects];
+        PFObject *objectServico = [queryServico getFirstObject];
+        [arrayIdServicosPendentes addObject:objectServico];
+        cell.textLabel.text = objectServico[@"dataServico"];
         
-        cell.textLabel.text = [dataServico[0] objectForKey:@"dataServico"];
         cell.detailTextLabel.text = [[self.arrayServicosPendentes[indexPath.row] objectForKey:@"valor"] stringValue];
+        
         
     }
 
@@ -127,7 +140,7 @@
 
         }
         else {
-            idServico = [self.arrayServicosPendentes[indexPath.row] objectId];
+            idServico = [arrayIdServicosPendentes[indexPath.row] objectId];
 
         }
         destinationViewController.idServico = idServico;
