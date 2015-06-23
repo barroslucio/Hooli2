@@ -7,7 +7,6 @@
 //
 
 #import "HOODetalhesServicoClienteViewController.h"
-#import "HOODetalhesProfissionalViewController.h"
 
 @interface HOODetalhesServicoClienteViewController ()<UITableViewDataSource, UITableViewDelegate>
 
