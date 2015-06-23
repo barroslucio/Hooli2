@@ -18,15 +18,19 @@
 @implementation HOODetalhesHistoricoServicoProfissionalViewController
 
 - (void)viewDidLoad {
-//    [super viewDidLoad];
-//    [self initProperties];
-//    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
-//    [query whereKey:@"objectId" equalTo:self.idServico];
-//    PFObject *object =[query getFirstObject];
-//    
-//    self.labelTipo.text = object[@"tipo"];
-//    self.labelData.text = [NSString stringWithFormat: @"Date: %@", object[@"dataServico"]];
-//    self.textViewDescricao.text = object[@"descricao"];
+    [super viewDidLoad];
+    [self initProperties];
+    NSLog(@"\n---teste%@", self.idServico);
+    PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+    [query whereKey:@"objectId" equalTo:self.idServico];
+    PFObject *object =[query getFirstObject];
+    
+
+    self.labelTipo.text = object[@"tipo"];
+    self.labelData.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", object[@"dataServico"]]];
+    self.textViewDescricao.text = object[@"descricao"];
+    
+    
 }
 
 
