@@ -67,7 +67,7 @@
     enderecoTextField = [UIFloatLabelTextField new];
     [enderecoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
     enderecoTextField.floatLabelActiveColor = [UIColor orangeColor];
-    enderecoTextField.placeholder = @"Endereçoço";
+    enderecoTextField.placeholder = @"Endereço";
     enderecoTextField.delegate = self;
     [self.subviewEndereco addSubview:enderecoTextField];
     
