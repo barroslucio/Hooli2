@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imagemTipoServico;
 @property (strong, nonatomic) IBOutlet UILabel *labelPrincipal;
 @property (strong, nonatomic) IBOutlet UILabel *labelSecundario;
+@property (strong, nonatomic) IBOutlet UILabel *labelData;
 
 @end

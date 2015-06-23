@@ -451,7 +451,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marque os serviços que você realiza." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9I-8X-Ki5">
-                                                <rect key="frame" x="38.5" y="442" width="298.5" height="19.5"/>
+                                                <rect key="frame" x="39" y="442" width="299" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -464,7 +464,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alvenaria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt3-rL-fhs">
-                                                        <rect key="frame" x="19" y="12" width="70.5" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="71" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -487,7 +487,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chaveiro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-XL-hAd">
-                                                        <rect key="frame" x="19" y="12" width="68" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="68" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -510,7 +510,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elétrica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQs-pT-Poe">
-                                                        <rect key="frame" x="19" y="12" width="57" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="57" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -533,7 +533,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hidráulica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ia-7W-vEQ">
-                                                        <rect key="frame" x="19" y="12" width="77" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="77" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -556,7 +556,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limpeza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifj-aN-Yf3">
-                                                        <rect key="frame" x="19" y="12" width="65" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="65" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -579,7 +579,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pintura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gq-ej-l0r">
-                                                        <rect key="frame" x="19" y="12" width="54.5" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="55" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -992,7 +992,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsz-Ia-70g">
-                                                    <rect key="frame" x="0.0" y="0.5" width="375" height="139.5"/>
+                                                    <rect key="frame" x="0.0" y="1" width="375" height="140"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCG-cM-WCy">
                                                     <rect key="frame" x="96" y="35" width="182" height="71"/>
@@ -1051,7 +1051,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qUU-EN-iap">
-                                                    <rect key="frame" x="15" y="4" width="78" height="71.5"/>
+                                                    <rect key="frame" x="15" y="4" width="78" height="72"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL9-dV-pXz">
                                                     <rect key="frame" x="117" y="8" width="118" height="21"/>
@@ -1069,6 +1069,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imagemTipoServico" destination="qUU-EN-iap" id="HOo-nK-r8Q"/>
+                                            <outlet property="labelData" destination="5L3-fX-sMz" id="Ymo-BH-ZkO"/>
                                             <outlet property="labelPrincipal" destination="bL9-dV-pXz" id="UZR-Om-Vcy"/>
                                             <outlet property="labelSecundario" destination="YPo-Pm-Ky0" id="ADj-Bs-2dG"/>
                                             <segue destination="K4s-8M-QYV" kind="show" identifier="detalhes" id="Eqh-Yp-58Q"/>
@@ -1110,7 +1111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOu-bX-cjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556.5" y="-288.5"/>
+            <point key="canvasLocation" x="1470.5" y="-392.5"/>
         </scene>
         <!--Detalhe Servico (fechado PRO)-->
         <scene sceneID="Qfa-a6-ufO">
@@ -1902,7 +1903,7 @@
                                                 <color key="backgroundColor" red="0.61960784310000006" green="0.87843137250000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Marque os serviços que você realiza." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jd4-0a-uFV">
-                                                <rect key="frame" x="38" y="249" width="298.5" height="19.5"/>
+                                                <rect key="frame" x="38" y="249" width="299" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1915,7 +1916,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alvenaria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5Q-lX-9ZH">
-                                                        <rect key="frame" x="19" y="12" width="70.5" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="71" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1931,7 +1932,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chaveiro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-NI-3O4">
-                                                        <rect key="frame" x="19" y="12" width="68" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="68" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1947,7 +1948,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Elétrica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdE-Cg-2pW">
-                                                        <rect key="frame" x="19" y="12" width="57" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="57" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1963,7 +1964,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hidráulica" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpD-Qw-Aj4">
-                                                        <rect key="frame" x="19" y="12" width="77" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="77" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1979,7 +1980,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Limpeza" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWq-XW-cnH">
-                                                        <rect key="frame" x="19" y="12" width="65" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="65" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1995,7 +1996,7 @@
                                                         <color key="onTintColor" red="0.13725490200000001" green="0.80392156859999997" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pintura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIA-re-tqB">
-                                                        <rect key="frame" x="19" y="12" width="54.5" height="20.5"/>
+                                                        <rect key="frame" x="19" y="12" width="55" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>

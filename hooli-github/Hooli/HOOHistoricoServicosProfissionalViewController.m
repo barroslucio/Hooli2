@@ -96,7 +96,8 @@
         [arrayIdPropostaEscolhida addObject:proposta];
         
         cell.labelPrincipal.text = [object objectForKey:@"tipo"];
-        
+        cell.labelData.text = [HOOHistoricoServicosProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", object[@"dataServico"]]]
+        ;
         cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@",[proposta[@"valor"] stringValue]];
         
         if ([[object objectForKey:@"tipo"]  isEqual: @"Limpeza"])
@@ -123,7 +124,7 @@
         {
             cell.imagemTipoServico.image = [UIImage imageNamed:@"eletricaIcon"];
         }
-
+        
         
     } else {
         
@@ -138,7 +139,9 @@
         [arrayIdServicosPendentes addObject:objectServico];
         
         cell.labelPrincipal.text = [objectServico objectForKey:@"tipo"];
-        
+        cell.labelData.text = [HOOHistoricoServicosProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", objectServico[@"dataServico"]]]
+;
+
         cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@",[[objectProposta objectForKey:@"valor"] stringValue]];
         
         if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Limpeza"])
@@ -165,6 +168,7 @@
         {
             cell.imagemTipoServico.image = [UIImage imageNamed:@"eletricaIcon"];
         }
+        
     }
 
     return cell;
@@ -210,6 +214,23 @@
         destinationViewController.idServico = nil;
         
     }
+}
+
+//Método de classe para formatar a date que vem do Parse
++ (NSString *)dateFormatter:(NSString *)data{
+    
+    NSRange rangeAno = NSMakeRange(0, 4);
+    NSRange rangeMes = NSMakeRange(5, 2);
+    NSRange rangeDia = NSMakeRange(8, 2);
+    
+    NSString *formatter = [NSString stringWithFormat:@"%@/%@/%@",
+                           [data substringWithRange:rangeDia],
+                           [data substringWithRange:rangeMes],
+                           [data substringWithRange:rangeAno]
+                           ];
+    
+    return formatter;
+    
 }
 
 
