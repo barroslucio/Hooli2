@@ -70,22 +70,27 @@
     if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]]){
         [tipoServico addObject:@"Pintura"];
 
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Pintura"];
     }
     if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]]){
         [tipoServico addObject:@"Limpeza"];
 
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Limpeza"];
     }
     if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]]){
         [tipoServico addObject:@"Chaveiro"];
 
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Chaveiro"];
     }
     if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]]){
         [tipoServico addObject:@"Hidráulica"];
 
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Hidráulica"];
     }
     if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]]){
         [tipoServico addObject:@"Elétrica"];
 
+        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Elétrica"];
     }
     [servicosDisponiveis whereKey:@"tipo" containedIn:tipoServico];
 

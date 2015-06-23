@@ -8,7 +8,7 @@
 
 #import "HOODetalhesServicosDisponiveisViewController.h"
 #import "HOOHistoricoServicosProfissionalViewController.h"
-
+#import "HOODetalhesHistoricoServicoProfissionalViewController.h"
 @interface HOODetalhesServicosDisponiveisViewController ()<UITextFieldDelegate>{
     UIFloatLabelTextField *valorTextField;
 
@@ -34,7 +34,7 @@
 {
     
             self.tipoServico.text = self.servico[@"tipo"];
-            self.dataServico.text = self.servico[@"dataServico"];
+            self.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:self.servico[@"dataServico"]];
     
     valorTextField = [UIFloatLabelTextField new];
     [valorTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -56,23 +56,65 @@
                                                                         views:NSDictionaryOfVariableBindings(valorTextField)]];
     
 
+}
+
+- (void)alertStatusCadastro:(NSString *)status
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta!" message:status delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
+    NSLog(@"Cadastro do Profissional recuzado");
     
 }
 
-- (IBAction)enviarProposta:(id)sender {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    NSNumber *valor = [formatter numberFromString:valorTextField.text];
+
+- (IBAction)enviarProposta:(id)sender
+{
+    NSString *statusCadastro;
+    //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
+    if (![valorTextField.text isEqualToString:@""])
+    {
+        
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+        NSNumber *valor = [formatter numberFromString:valorTextField.text];
     
-    PFObject *proposta = [PFObject objectWithClassName:@"Proposta"];
-    [proposta setObject: [PFUser currentUser] forKey:@"profissional"];
-    [proposta setObject: self.servico forKey:@"servico"];
-    [proposta setObject: valor forKey:@"valor"];
-    [proposta saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-        if(succeeded){
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HOOHistoricoServicosProfissionalViewController *viewController = (HOOHistoricoServicosProfissionalViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HistoricoServicosPro"];
-            [self presentViewController:viewController animated:YES completion:nil];
-        }
-    }];
+        PFObject *proposta = [PFObject objectWithClassName:@"Proposta"];
+        [proposta setObject: [PFUser currentUser] forKey:@"profissional"];
+        [proposta setObject: self.servico forKey:@"servico"];
+        [proposta setObject: valor forKey:@"valor"];
+        [proposta saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+        {
+            [self initProperties];
+            if(succeeded)
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Proposta realizada com sucesso!"
+                                                                    message:@"Obrigado!"
+                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+
+            }
+            else
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                                    message:[error.userInfo objectForKey:@"error"]
+                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alertView show];
+
+            }
+        }];
+    }
+    else
+    {
+        statusCadastro = @"Preencha o valor da proposta!";
+        [self alertStatusCadastro:statusCadastro];
+    }
 }
+
+- (IBAction)voltar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
 @end

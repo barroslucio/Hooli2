@@ -865,7 +865,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hkg-jF-R7h">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -904,12 +904,24 @@
                                     <outlet property="delegate" destination="N2A-yM-mT7" id="vxd-GE-T6C"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b4g-qh-g1G">
+                                <rect key="frame" x="66" y="68" width="242" height="29"/>
+                                <segments>
+                                    <segment title="Propostas"/>
+                                    <segment title="Contratados"/>
+                                </segments>
+                                <color key="tintColor" red="0.1294117719" green="0.73725491759999995" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="segmentedAction:" destination="N2A-yM-mT7" eventType="valueChanged" id="FJf-tl-hVf"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" id="yMF-hN-ghY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="b4g-qh-g1G" id="6XF-Wc-jwC"/>
                         <outlet property="tableView" destination="Hkg-jF-R7h" id="sL3-Hv-o3Y"/>
                     </connections>
                 </viewController>
@@ -1290,26 +1302,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo de serviço: --" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-vG-Fwy">
-                                <rect key="frame" x="41" y="76" width="141" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data: -----" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxd-Qs-XRg">
-                                <rect key="frame" x="41" y="120" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hora: ----" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sg-rH-ZIy">
-                                <rect key="frame" x="41" y="167" width="74" height="21"/>
+                                <rect key="frame" x="41" y="139" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-je-heN">
-                                <rect key="frame" x="133" y="436" width="108" height="30"/>
+                                <rect key="frame" x="133" y="391" width="108" height="30"/>
                                 <state key="normal" title="Fazer proposta!">
                                     <color key="titleColor" red="0.20000000000000001" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1319,16 +1319,34 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IeB-hV-Zo0">
-                                <rect key="frame" x="19" y="189" width="336" height="62"/>
+                                <rect key="frame" x="19" y="193" width="336" height="62"/>
                                 <color key="backgroundColor" red="0.88617759939999996" green="0.88615107540000004" blue="0.88616609570000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CyO-kO-oaq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Proposta" id="511-3U-96E">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="TVY-wD-qgD">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="voltar:" destination="tI3-SF-3sh" id="he3-JE-idU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo de serviço: --" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkh-vG-Fwy">
+                                <rect key="frame" x="41" y="98" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="dataServico" destination="Sxd-Qs-XRg" id="cSl-Yw-b4a"/>
-                        <outlet property="horaServico" destination="6Sg-rH-ZIy" id="DZH-ie-NEg"/>
                         <outlet property="subviewValor" destination="IeB-hV-Zo0" id="zGX-qH-EZg"/>
                         <outlet property="tipoServico" destination="Tkh-vG-Fwy" id="0QO-In-EzS"/>
                     </connections>
