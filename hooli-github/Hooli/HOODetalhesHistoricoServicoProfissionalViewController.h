@@ -12,5 +12,6 @@
 @interface HOODetalhesHistoricoServicoProfissionalViewController : UIViewController
 
 @property (nonatomic) NSString *idServico;
+- (IBAction)voltar:(id)sender;
 
 @end
