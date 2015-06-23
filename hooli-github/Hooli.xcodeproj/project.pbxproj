@@ -17,6 +17,7 @@
 		772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAAD1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m */; };
 		772FDAB11B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */; };
 		772FDAB41B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAB31B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m */; };
+		775646FE1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 775646FD1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m */; };
 		77A88AD11B25E38C002BD992 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A88AD01B25E38C002BD992 /* main.m */; };
 		77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A88AD31B25E38C002BD992 /* AppDelegate.m */; };
 		77A88AD71B25E38C002BD992 /* HOOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */; };
@@ -93,6 +94,8 @@
 		772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOServicosDisponiveisTVCell.m; sourceTree = "<group>"; };
 		772FDAB21B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOODetalhesServicosDisponiveisViewController.h; sourceTree = "<group>"; };
 		772FDAB31B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOODetalhesServicosDisponiveisViewController.m; sourceTree = "<group>"; };
+		775646FC1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOHistoricoServicoProfissionalTVCell.h; sourceTree = "<group>"; };
+		775646FD1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOHistoricoServicoProfissionalTVCell.m; sourceTree = "<group>"; };
 		77A88ACB1B25E38C002BD992 /* Hooli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hooli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A88ACF1B25E38C002BD992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77A88AD01B25E38C002BD992 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */,
 				772FDAB21B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.h */,
 				772FDAB31B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m */,
+				775646FC1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.h */,
+				775646FD1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m */,
 				243CC9121B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.h */,
 				243CC9131B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m */,
 				243CC9151B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.h */,
@@ -428,6 +433,7 @@
 				77EE11E61B3362E200262F0E /* HOOEscolhaCadastroViewController.m in Sources */,
 				77EF529B1B34FCD60041F579 /* HOOAgendarServicoTVCell.m in Sources */,
 				77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */,
+				775646FE1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m in Sources */,
 				79A197811B29BD90009A3152 /* HOOPerfilClienteViewController.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,
 				243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */,

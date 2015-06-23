@@ -97,6 +97,32 @@
     
     HOOServicosDisponiveisTVCell   *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
+    if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Limpeza"])
+    {
+        cell.imagemServico.image = [UIImage imageNamed:@"limpezaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Alvenaria"])
+    {
+        cell.imagemServico.image = [UIImage imageNamed:@"alvenariaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Hidráulica"])
+    {
+        cell.imagemServico.image = [UIImage imageNamed:@"hidraulicaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Pintura"])
+    {
+        cell.imagemServico.image = [UIImage imageNamed:@"pinturaIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Chaveiro"])
+    {
+        cell.imagemServico.image = [UIImage imageNamed:@"chaveiroIcon"];
+    }
+    else if ([[self.arrayServicos[indexPath.row] objectForKey:@"tipo"]  isEqual: @"Elétrica"])
+    {
+        cell.imagemServico.image = [UIImage imageNamed:@"eletricaIcon"];
+    }
+
+    
     cell.tipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
     cell.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[self.arrayServicos[indexPath.row] objectForKey:@"dataServico"]];
     return cell;

@@ -7,6 +7,7 @@
 //
 
 #import "HOOHistoricoServicosProfissionalViewController.h"
+#import "HOOHistoricoServicoProfissionalTVCell.h"
 
 @interface HOOHistoricoServicosProfissionalViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -83,7 +84,7 @@
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    HOOHistoricoServicoProfissionalTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     if (type==0) {
         
@@ -94,27 +95,76 @@
         
         [arrayIdPropostaEscolhida addObject:proposta];
         
-        cell.textLabel.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:object[@"dataServico"]];
+        cell.labelPrincipal.text = [object objectForKey:@"tipo"];
         
-        cell.detailTextLabel.text = [proposta[@"valor"] stringValue];
+        cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@",[proposta[@"valor"] stringValue]];
         
+        if ([[object objectForKey:@"tipo"]  isEqual: @"Limpeza"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"limpezaIcon"];
+        }
+        else if ([[object objectForKey:@"tipo"]  isEqual: @"Alvenaria"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"alvenariaIcon"];
+        }
+        else if ([[object objectForKey:@"tipo"]  isEqual: @"Hidráulica"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"hidraulicaIcon"];
+        }
+        else if ([[object objectForKey:@"tipo"]  isEqual: @"Pintura"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"pinturaIcon"];
+        }
+        else if ([[object objectForKey:@"tipo"]  isEqual: @"Chaveiro"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"chaveiroIcon"];
+        }
+        else if ([[object objectForKey:@"tipo"]  isEqual: @"Elétrica"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"eletricaIcon"];
+        }
 
+        
     } else {
         
         NSLog(@"\n-%@", [self.arrayServicosPendentes[indexPath.row] objectId]);
 
-        NSDictionary *object = self.arrayServicosPendentes[indexPath.row]; //Dicionário recebe o objeto do array de propostas.
-        PFObject *servico = (PFObject *) object[@"servico"]; //PFobject recebe o campo "servico" da classe Proposta
+        NSDictionary *objectProposta = self.arrayServicosPendentes[indexPath.row]; //Dicionário recebe o objeto do array de propostas.
+        
+        PFObject *servico = (PFObject *) objectProposta[@"servico"]; //PFobject recebe o campo "servico" da classe Proposta
         PFQuery *queryServico = [PFQuery queryWithClassName:@"Servico"];
         [queryServico whereKey:@"objectId" equalTo:[servico objectId]]; //Faz requisição do serviço que tem objectId igual ao objeto do array de propostas
         PFObject *objectServico = [queryServico getFirstObject];
         [arrayIdServicosPendentes addObject:objectServico];
         
-        cell.textLabel.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:objectServico[@"dataServico"]];
+        cell.labelPrincipal.text = [objectServico objectForKey:@"tipo"];
         
-        cell.detailTextLabel.text = [[self.arrayServicosPendentes[indexPath.row] objectForKey:@"valor"] stringValue];
+        cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@",[[objectProposta objectForKey:@"valor"] stringValue]];
         
-        
+        if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Limpeza"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"limpezaIcon"];
+        }
+        else if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Alvenaria"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"alvenariaIcon"];
+        }
+        else if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Hidráulica"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"hidraulicaIcon"];
+        }
+        else if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Pintura"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"pinturaIcon"];
+        }
+        else if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Chaveiro"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"chaveiroIcon"];
+        }
+        else if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Elétrica"])
+        {
+            cell.imagemTipoServico.image = [UIImage imageNamed:@"eletricaIcon"];
+        }
     }
 
     return cell;

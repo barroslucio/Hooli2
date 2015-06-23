@@ -12,6 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *tipoServico;
 @property (strong, nonatomic) IBOutlet UILabel *dataServico;
-@property (strong, nonatomic) IBOutlet UIImageView *status;
+@property (strong, nonatomic) IBOutlet UIImageView *imagemServico;
 
 @end
