@@ -49,7 +49,7 @@
     NSRange rangeMes = NSMakeRange(5, 2);
     NSRange rangeDia = NSMakeRange(8, 2);
     
-    NSString *formatter = [NSString stringWithFormat:@"%@-%@-%@",
+    NSString *formatter = [NSString stringWithFormat:@"%@/%@/%@",
                                [data substringWithRange:rangeDia],
                                [data substringWithRange:rangeMes],
                                [data substringWithRange:rangeAno]
