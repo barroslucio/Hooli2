@@ -1264,11 +1264,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-4L-inL">
-                                <rect key="frame" x="139" y="347" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-je-heN">
                                 <rect key="frame" x="133" y="436" width="108" height="30"/>
                                 <state key="normal" title="Fazer proposta!">
@@ -1279,6 +1274,15 @@
                                     <action selector="enviarProposta:" destination="tI3-SF-3sh" eventType="touchUpInside" id="TpF-S4-gwN"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IeB-hV-Zo0">
+                                <rect key="frame" x="19" y="189" width="336" height="62"/>
+                                <color key="backgroundColor" red="0.88617759939999996" green="0.88615107540000004" blue="0.88616609570000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iXV-4L-inL">
+                                <rect key="frame" x="139" y="319" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1286,6 +1290,7 @@
                     <connections>
                         <outlet property="dataServico" destination="Sxd-Qs-XRg" id="cSl-Yw-b4a"/>
                         <outlet property="horaServico" destination="6Sg-rH-ZIy" id="DZH-ie-NEg"/>
+                        <outlet property="subviewValor" destination="IeB-hV-Zo0" id="zGX-qH-EZg"/>
                         <outlet property="tipoServico" destination="Tkh-vG-Fwy" id="0QO-In-EzS"/>
                         <outlet property="valorField" destination="iXV-4L-inL" id="aeU-f5-1Ah"/>
                     </connections>
@@ -1398,7 +1403,7 @@
                                                 <color key="backgroundColor" red="0.88617759939999996" green="0.88615107540000004" blue="0.88616609570000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3A-xI-XJh">
-                                                <rect key="frame" x="6" y="251" width="361" height="50"/>
+                                                <rect key="frame" x="6" y="251" width="361" height="53"/>
                                                 <color key="backgroundColor" red="0.88617759939999996" green="0.88615107540000004" blue="0.88616609570000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <accessibility key="accessibilityConfiguration" label="">
                                                     <bool key="isElement" value="NO"/>

@@ -9,7 +9,10 @@
 #import "HOODetalhesServicosDisponiveisViewController.h"
 #import "HOOHistoricoServicosProfissionalViewController.h"
 
-@interface HOODetalhesServicosDisponiveisViewController ()
+@interface HOODetalhesServicosDisponiveisViewController ()<UITextFieldDelegate>{
+    UIFloatLabelTextField *valorTextField;
+
+}
 
 @end
 
@@ -32,14 +35,33 @@
     
             self.tipoServico.text = self.servico[@"tipo"];
             self.dataServico.text = self.servico[@"dataServico"];
- 
     
+    valorTextField = [UIFloatLabelTextField new];
+    [valorTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    valorTextField.floatLabelActiveColor = [UIColor orangeColor];
+    valorTextField.placeholder = @"Preço do Serviço";
+    valorTextField.delegate = self;
+    valorTextField.keyboardType = UIKeyboardTypeNumberPad;
+    [self.subviewValor addSubview:valorTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[valorTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(valorTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[valorTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(valorTextField)]];
+    
+
     
 }
 
 - (IBAction)enviarProposta:(id)sender {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    NSNumber *valor = [formatter numberFromString:self.valorField.text];
+    NSNumber *valor = [formatter numberFromString:valorTextField.text];
     
     PFObject *proposta = [PFObject objectWithClassName:@"Proposta"];
     [proposta setObject: [PFUser currentUser] forKey:@"profissional"];
