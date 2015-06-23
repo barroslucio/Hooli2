@@ -88,7 +88,7 @@
         [query whereKey:@"servico" equalTo:object];
         PFObject *proposta = [query getFirstObject];
         
-        cell.textLabel.text = object[@"dataServico"];
+        cell.textLabel.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:object[@"dataServico"]];
         
         cell.detailTextLabel.text = [proposta[@"valor"] stringValue];
         

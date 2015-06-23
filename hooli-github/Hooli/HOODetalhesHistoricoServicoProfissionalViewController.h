@@ -12,5 +12,6 @@
 @interface HOODetalhesHistoricoServicoProfissionalViewController : UIViewController
 
 @property (nonatomic) NSString *idServico;
++ (NSString *)dateFormatter:(NSString *)data;
 
 @end

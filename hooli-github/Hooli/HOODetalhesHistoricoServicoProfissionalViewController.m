@@ -25,14 +25,36 @@
     [query whereKey:@"objectId" equalTo:self.idServico];
     PFObject *object =[query getFirstObject];
     
+
     self.labelTipo.text = object[@"tipo"];
-    self.labelData.text = [NSString stringWithFormat: @"Date: %@", object[@"dataServico"]];
+    self.labelData.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", object[@"dataServico"]]];
     self.textViewDescricao.text = object[@"descricao"];
+    
+    
 }
+
+
 - (void)initProperties{
     self.textViewDescricao.editable = NO;
 }
 
+
+//Método de classe para formatar a date que vem do Parse
++ (NSString *)dateFormatter:(NSString *)data{
+    
+    NSRange rangeAno = NSMakeRange(0, 4);
+    NSRange rangeMes = NSMakeRange(5, 2);
+    NSRange rangeDia = NSMakeRange(8, 2);
+    
+    NSString *formatter = [NSString stringWithFormat:@"%@-%@-%@",
+                               [data substringWithRange:rangeDia],
+                               [data substringWithRange:rangeMes],
+                               [data substringWithRange:rangeAno]
+                               ];
+    
+    return formatter;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
