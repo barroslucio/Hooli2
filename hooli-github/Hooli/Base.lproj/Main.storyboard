@@ -917,6 +917,25 @@
             </objects>
             <point key="canvasLocation" x="2182.5" y="1919.5"/>
         </scene>
+        <!--detalhe servico (fechado CLIENTE)-->
+        <scene sceneID="Mz7-za-iFX">
+            <objects>
+                <viewController title="detalhe servico (fechado CLIENTE)" id="yAb-8t-rgD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uwe-vg-dfl"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fM-Cf-GRd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="inH-xv-Ae2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXV-sC-iIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199.5" y="2701.5"/>
+        </scene>
         <!--Agendar-->
         <scene sceneID="faM-Cb-0ho">
             <objects>
@@ -1080,6 +1099,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOu-bX-cjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1556.5" y="-288.5"/>
+        </scene>
+        <!--Detalhe Servico (fechado PRO)-->
+        <scene sceneID="Qfa-a6-ufO">
+            <objects>
+                <viewController title="Detalhe Servico (fechado PRO)" id="VPx-Kg-xcN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bMB-7R-e0a"/>
+                        <viewControllerLayoutGuide type="bottom" id="K7r-Zl-iEb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gk4-xI-9Bh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gG4-7G-wAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="442"/>
         </scene>
         <!--Detalhe de serviço (histórico)-->
         <scene sceneID="sRs-Wi-1tX">
