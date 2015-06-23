@@ -14,7 +14,6 @@
 
 @interface HOOServicosDisponiveisViewController (){
     NSString *strDate;
-    NSArray *trueDeepCopyArray;
 
 }
 
@@ -61,29 +60,35 @@
             }
             //NSLog(@"%ld", servicesToFilter.count);
             [servicosDisponiveis whereKey:@"objectId" notContainedIn:servicesToFilter];
-    
+
+    NSMutableArray *tipoServico = [@[] mutableCopy];
     
     if ([user[@"alvenaria"] isEqual:[NSNumber numberWithBool:YES]]){
-        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Alvenaria"];
+        [tipoServico addObject:@"Alvenaria"];
     }
     if ([user[@"pintura"] isEqual:[NSNumber numberWithBool:YES]]){
-        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Pintura"];
+        [tipoServico addObject:@"Pintura"];
+
     }
     if ([user[@"limpeza"] isEqual:[NSNumber numberWithBool:YES]]){
-        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Limpeza"];
+        [tipoServico addObject:@"Limpeza"];
+
     }
     if ([user[@"chaveiro"] isEqual:[NSNumber numberWithBool:YES]]){
-        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Chaveiro"];
+        [tipoServico addObject:@"Chaveiro"];
+
     }
     if ([user[@"hidraulica"] isEqual:[NSNumber numberWithBool:YES]]){
-        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Hidráulica"];
+        [tipoServico addObject:@"Hidráulica"];
+
     }
     if ([user[@"eletrica"] isEqual:[NSNumber numberWithBool:YES]]){
-        [servicosDisponiveis whereKey:@"tipo" equalTo:@"Elétrica"];
+        [tipoServico addObject:@"Elétrica"];
+
     }
-    
-    
-            self.arrayServicos = [servicosDisponiveis findObjects];
+    [servicosDisponiveis whereKey:@"tipo" containedIn:tipoServico];
+
+    self.arrayServicos =[servicosDisponiveis findObjects];
 }
 
 //TABLE VIEW
