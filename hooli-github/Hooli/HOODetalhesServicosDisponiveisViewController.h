@@ -12,11 +12,9 @@
 
 @interface HOODetalhesServicosDisponiveisViewController : UIViewController
 
-    @property (nonatomic) PFObject *servico;
-    @property (strong, nonatomic) IBOutlet UILabel *tipoServico;
-    @property (strong, nonatomic) IBOutlet UILabel *dataServico;
-    @property (strong, nonatomic) IBOutlet UILabel *horaServico;
-@property (strong, nonatomic) IBOutlet UITextField *valorField;
+@property (nonatomic) PFObject *servico;
+@property (strong, nonatomic) IBOutlet UILabel *tipoServico;
+@property (strong, nonatomic) IBOutlet UILabel *dataServico;
 @property (weak, nonatomic) IBOutlet UIView *subviewValor;
 - (IBAction)enviarProposta:(id)sender;
 
