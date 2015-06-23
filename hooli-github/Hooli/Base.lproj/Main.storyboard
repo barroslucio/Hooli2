@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -456,7 +456,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-gr-ASK" userLabel="subviewAlvenaria">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-gr-ASK" userLabel="subviewAlvenaria">
                                                 <rect key="frame" x="0.0" y="468" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FGJ-3F-FRA">
@@ -479,7 +479,7 @@
                                                     <constraint firstItem="FGJ-3F-FRA" firstAttribute="bottom" secondItem="dt3-rL-fhs" secondAttribute="bottom" constant="4.5" id="oVt-Qn-E5d"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s76-oj-phO" userLabel="subviewChaveiro">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s76-oj-phO" userLabel="subviewChaveiro">
                                                 <rect key="frame" x="0.0" y="514" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYY-7X-oV1">
@@ -502,7 +502,7 @@
                                                     <constraint firstItem="9iB-XL-hAd" firstAttribute="leading" secondItem="s76-oj-phO" secondAttribute="leading" constant="19" id="wme-9m-aUG"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-tA-HSp" userLabel="subviewElétrica">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-tA-HSp" userLabel="subviewElétrica">
                                                 <rect key="frame" x="0.0" y="560" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8XT-wq-imu">
@@ -525,7 +525,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="8XT-wq-imu" secondAttribute="trailing" constant="18" id="gCO-d5-dWY"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-JY-t0y" userLabel="subviewHidráulica">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-JY-t0y" userLabel="subviewHidráulica">
                                                 <rect key="frame" x="0.0" y="606" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LbR-FE-ZB3">
@@ -548,7 +548,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="NmL-XB-Z0E"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIN-q0-zLD" userLabel="subviewLimpeza">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIN-q0-zLD" userLabel="subviewLimpeza">
                                                 <rect key="frame" x="0.0" y="652" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXI-uF-FkU">
@@ -571,7 +571,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="vhg-NV-X1G"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mt7-0s-tZa" userLabel="subviewPintura">
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mt7-0s-tZa" userLabel="subviewPintura">
                                                 <rect key="frame" x="0.0" y="698" width="375" height="45"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E3i-Xd-E6r">
@@ -1285,7 +1285,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="TVY-wD-qgD">
                                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="nGh-rb-Ocm" kind="show" id="zFA-qe-Ejd"/>
+                                                <action selector="voltar:" destination="tI3-SF-3sh" id="he3-JE-idU"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1998,8 +1998,5 @@
             <point key="canvasLocation" x="2207.5" y="-772.5"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="zFA-qe-Ejd"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

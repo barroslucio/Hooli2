@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *dataServico;
 @property (weak, nonatomic) IBOutlet UIView *subviewValor;
 - (IBAction)enviarProposta:(id)sender;
+- (IBAction)voltar:(id)sender;
 
 @end
