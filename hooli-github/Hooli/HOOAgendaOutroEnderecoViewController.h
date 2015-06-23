@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "UIFloatLabelTextField.h"
+
 @interface HOOAgendaOutroEnderecoViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *servico;
@@ -29,6 +31,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldDate;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTime;
+
+
+@property (weak, nonatomic) IBOutlet UIView *subviewEndereco;
+@property (weak, nonatomic) IBOutlet UIView *subviewData;
 
 
 - (IBAction)agendaServico:(id)sender;

@@ -15,6 +15,10 @@
     NSString *strTime;
     NSString *strComb;
     NSString *tipoServico;
+    UIFloatLabelTextField *enderecoTextField;
+    UIFloatLabelTextField *dataTextField;
+
+
 }
 @end
 
@@ -56,10 +60,49 @@
     
     self.textFieldDate.delegate = self;
     self.textFieldTime.delegate = self;
-    self.enderecoField.delegate = self;
     self.descricaoField.delegate = self;
+    enderecoTextField.delegate = self;
+    dataTextField.delegate = self;
+    
+    enderecoTextField = [UIFloatLabelTextField new];
+    [enderecoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    enderecoTextField.floatLabelActiveColor = [UIColor orangeColor];
+    enderecoTextField.placeholder = @"Endereçoço";
+    enderecoTextField.delegate = self;
+    [self.subviewEndereco addSubview:enderecoTextField];
     
     
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[enderecoTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[enderecoTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
+    
+    dataTextField = [UIFloatLabelTextField new];
+    [dataTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    dataTextField.floatLabelActiveColor = [UIColor orangeColor];
+    dataTextField.placeholder = @"Data do serviço";
+    dataTextField.delegate = self;
+    [self.subviewData addSubview:dataTextField];
+    
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[dataTextField]-0-|"
+                                                                      options:NSLayoutFormatAlignAllBaseline
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
+    // Vertical
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[dataTextField(45)]-0-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
+    
+
+    
+
     //OCULTA TECLADO
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -83,7 +126,7 @@
     self.pickerDate.date = [NSDate date];
     self.pickerDate.locale = locale;
     self.pickerDate.minuteInterval = 1;
-    self.textFieldDate.inputView = self.pickerDate;
+    dataTextField.inputView = self.pickerDate;
     [self.pickerDate addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
     
     
@@ -104,7 +147,7 @@
 
     strDate = [dateFormatter stringFromDate:datePicker.date];
     strInvertedDate = [invertedDateFormatter stringFromDate:datePicker.date];
-    self.textFieldDate.text = [NSString stringWithFormat:@"Data do serviço: %@",strDate];
+    dataTextField.text = [NSString stringWithFormat:@"Data do serviço: %@",strDate];
 
     NSLog(@"---date");
 
@@ -125,8 +168,8 @@
 
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender{
     [self.textFieldDate resignFirstResponder];
-    [self.textFieldTime resignFirstResponder];
-    [self.enderecoField resignFirstResponder];
+    [dataTextField resignFirstResponder];
+    [enderecoTextField resignFirstResponder];
     [self.descricaoField resignFirstResponder];
 
     
@@ -144,13 +187,12 @@
 - (IBAction)agendaServico:(id)sender {
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.descricaoField.text isEqualToString:@""] && ![self.textFieldDate.text isEqualToString:@""] && ![self.textFieldTime.text isEqualToString:@""] && ![self.enderecoField.text isEqualToString:@""])
+    if (![self.descricaoField.text isEqualToString:@""] && ![dataTextField.text isEqualToString:@""] && ![self.textFieldTime.text isEqualToString:@""] && ![enderecoTextField.text isEqualToString:@""])
     {
-        PFUser *user = [PFUser currentUser];
         
         PFObject *servico = [PFObject objectWithClassName:@"Servico"];
         [servico setObject:[PFUser currentUser] forKey:@"User"];
-        servico[@"endereco"] = [user objectForKey:@"endereco"];
+        servico[@"endereco"] = enderecoTextField.text;
         servico[@"descricao"] = self.descricaoField.text;
         servico[@"dataServico"] = strInvertedDate;
         servico[@"tipo"] = tipoServico;
