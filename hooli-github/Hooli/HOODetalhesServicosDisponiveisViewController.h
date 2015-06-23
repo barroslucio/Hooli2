@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "UIFloatLabelTextField.h"
 
 @interface HOODetalhesServicosDisponiveisViewController : UIViewController
 
@@ -16,6 +17,7 @@
     @property (strong, nonatomic) IBOutlet UILabel *dataServico;
     @property (strong, nonatomic) IBOutlet UILabel *horaServico;
 @property (strong, nonatomic) IBOutlet UITextField *valorField;
+@property (weak, nonatomic) IBOutlet UIView *subviewValor;
 - (IBAction)enviarProposta:(id)sender;
 
 @end
