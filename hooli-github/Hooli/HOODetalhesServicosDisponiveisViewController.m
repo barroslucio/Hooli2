@@ -8,7 +8,7 @@
 
 #import "HOODetalhesServicosDisponiveisViewController.h"
 #import "HOOHistoricoServicosProfissionalViewController.h"
-
+#import "HOODetalhesHistoricoServicoProfissionalViewController.h"
 @interface HOODetalhesServicosDisponiveisViewController ()<UITextFieldDelegate>{
     UIFloatLabelTextField *valorTextField;
 
@@ -34,7 +34,7 @@
 {
     
             self.tipoServico.text = self.servico[@"tipo"];
-            self.dataServico.text = self.servico[@"dataServico"];
+            self.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:self.servico[@"dataServico"]];
     
     valorTextField = [UIFloatLabelTextField new];
     [valorTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
