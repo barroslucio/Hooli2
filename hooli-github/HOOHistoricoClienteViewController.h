@@ -12,5 +12,7 @@
 #import "HOOHistoricoClienteTVCell.h"
 
 @interface HOOHistoricoClienteViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)segmentedAction:(id)sender;
 
 @end

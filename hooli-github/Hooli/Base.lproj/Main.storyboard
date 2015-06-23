@@ -865,7 +865,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hkg-jF-R7h">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -904,12 +904,24 @@
                                     <outlet property="delegate" destination="N2A-yM-mT7" id="vxd-GE-T6C"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b4g-qh-g1G">
+                                <rect key="frame" x="66" y="68" width="242" height="29"/>
+                                <segments>
+                                    <segment title="Propostas"/>
+                                    <segment title="Contratados"/>
+                                </segments>
+                                <color key="tintColor" red="0.1294117719" green="0.73725491759999995" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="segmentedAction:" destination="N2A-yM-mT7" eventType="valueChanged" id="FJf-tl-hVf"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" id="yMF-hN-ghY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="b4g-qh-g1G" id="6XF-Wc-jwC"/>
                         <outlet property="tableView" destination="Hkg-jF-R7h" id="sL3-Hv-o3Y"/>
                     </connections>
                 </viewController>
