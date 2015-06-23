@@ -227,7 +227,7 @@
     NSNumber *ddd = [formatter numberFromString:dddTextField.text];
     NSNumber *tipo = [NSNumber numberWithInt:0];;
     
-    PFUser *user = [PFUser user];
+    PFUser *user = [PFUser currentUser];
     
     
     user[@"endereco"] = enderecoTextField.text;

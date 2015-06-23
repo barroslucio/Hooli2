@@ -279,7 +279,7 @@
     
     
     
-    PFUser *user = [PFUser user];
+    PFUser *user = [PFUser currentUser];
     user.username =emailTextField.text;
     user[@"endereco"] = enderecoTextField.text;
     user[@"email"]= emailTextField.text;
