@@ -87,14 +87,13 @@
             [self initProperties];
             if(succeeded)
             {
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                HOOHistoricoServicosProfissionalViewController *viewController = (HOOHistoricoServicosProfissionalViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HistoricoServicosPro"];
-                [self presentViewController:viewController animated:YES completion:nil];
-                
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Proposta realizada com sucesso!"
                                                                     message:@"Obrigado!"
                                                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+
             }
             else
             {
