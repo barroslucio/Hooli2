@@ -20,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initProperties];
-    NSLog(@"\n---teste%@", self.idServico);
+    
+    NSLog(@"\n---teste %@ - %@", self.idServico, self.idProposta);
+    
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
     [query whereKey:@"objectId" equalTo:self.idServico];
     PFObject *object =[query getFirstObject];
@@ -46,7 +49,7 @@
     NSRange rangeMes = NSMakeRange(5, 2);
     NSRange rangeDia = NSMakeRange(8, 2);
     
-    NSString *formatter = [NSString stringWithFormat:@"%@-%@-%@",
+    NSString *formatter = [NSString stringWithFormat:@"%@/%@/%@",
                                [data substringWithRange:rangeDia],
                                [data substringWithRange:rangeMes],
                                [data substringWithRange:rangeAno]

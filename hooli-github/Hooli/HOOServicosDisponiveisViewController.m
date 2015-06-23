@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "HOOServicosDisponiveisTVCell.h"
 #import "HOODetalhesServicosDisponiveisViewController.h"
+#import "HOODetalhesHistoricoServicoProfissionalViewController.h"
 
 @interface HOOServicosDisponiveisViewController (){
     NSString *strDate;
@@ -58,7 +59,7 @@
                 PFObject *servico = (PFObject *) object[@"servico"];
                 [servicesToFilter addObject:[servico objectId]];
             }
-            //NSLog(@"%ld", servicesToFilter.count);
+            NSLog(@"%ld", servicesToFilter.count);
             [servicosDisponiveis whereKey:@"objectId" notContainedIn:servicesToFilter];
 
     NSMutableArray *tipoServico = [@[] mutableCopy];
@@ -97,8 +98,7 @@
     HOOServicosDisponiveisTVCell   *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
     cell.tipoServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"tipo"];
-    cell.dataServico.text = [self.arrayServicos[indexPath.row] objectForKey:@"dataServico"];
-
+    cell.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[self.arrayServicos[indexPath.row] objectForKey:@"dataServico"]];
     return cell;
 }
 
