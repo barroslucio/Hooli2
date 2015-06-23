@@ -13,5 +13,6 @@
 
 @property (nonatomic) NSString *idServico;
 + (NSString *)dateFormatter:(NSString *)data;
+- (IBAction)voltar:(id)sender;
 
 @end

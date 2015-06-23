@@ -1094,7 +1094,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="O5b-vi-Ta6">
                                             <color key="tintColor" red="0.1450980392" green="0.71372549019999998" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="Jlx-KJ-5Sm" kind="show" id="P2G-XM-n11"/>
+                                                <action selector="voltar:" destination="K4s-8M-QYV" id="7gG-IS-wnY"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1986,8 +1986,5 @@
             <point key="canvasLocation" x="2207.5" y="-772.5"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="P2G-XM-n11"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
