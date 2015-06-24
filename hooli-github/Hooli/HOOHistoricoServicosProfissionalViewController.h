@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "HOODetalhesHistoricoServicoProfissionalViewController.h"
+#import "HOOInformacoesClienteViewController.h"
 @interface HOOHistoricoServicosProfissionalViewController : UIViewController
 + (NSString *)dateFormatter:(NSString *)data;
 

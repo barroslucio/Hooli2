@@ -111,7 +111,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(type == 0)
     {
@@ -121,7 +121,6 @@
         [self performSegueWithIdentifier:@"detalheProfissionalEscolhido" sender:self];
 
     }
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -183,38 +183,53 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(type == 0)
+    {
+        [self performSegueWithIdentifier:@"detalhesCliente" sender:self];
+        
+    }else{
+        [self performSegueWithIdentifier:@"detalhesServico" sender:self];
+        
+    }
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    HOODetalhesHistoricoServicoProfissionalViewController *destinationViewController = [segue destinationViewController];
-    
-    
-    if ([segue.identifier isEqual:@"detalhes"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *idServico;
-        NSString *idProposta;
+    NSString *idServico;
+    NSString *idProposta;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+    if ([segue.identifier isEqual:@"detalhesCliente"]) {
+        
+        HOODetalhesHistoricoServicoProfissionalViewController *destinationViewController = [segue destinationViewController];
+
+        idServico = [self.arrayServicosEscolhido[indexPath.row] objectId];
+        idProposta = [arrayIdPropostaEscolhida[indexPath.row] objectId];
 
 
-        if (type==0) {
-            idServico = [self.arrayServicosEscolhido[indexPath.row] objectId];
-            idProposta = [arrayIdPropostaEscolhida[indexPath.row] objectId];
-
-        }
-        else {
-            idProposta = [self.arrayServicosPendentes[indexPath.row] objectId];
-            idServico = [arrayIdServicosPendentes[indexPath.row] objectId];
-
-        }
         destinationViewController.idServico = idServico;
         destinationViewController.idProposta = idProposta;
-    } else {
-        destinationViewController.idServico = nil;
+         
+    } else if ([segue.identifier isEqual:@"detalhesServico"]) {
         
-    }
-}
+        HOOInformacoesClienteViewController *destinationViewController = [segue destinationViewController];
+        
+        idProposta = [self.arrayServicosPendentes[indexPath.row] objectId];
+        idServico = [arrayIdServicosPendentes[indexPath.row] objectId];
+        
+        destinationViewController.idServico = idServico;
+        destinationViewController.idProposta = idProposta;
+
+
+        
+    }}
 
 //Método de classe para formatar a date que vem do Parse
 + (NSString *)dateFormatter:(NSString *)data{

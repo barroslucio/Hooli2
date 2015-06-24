@@ -13,6 +13,7 @@
 		246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProffisionalViewController.m */; };
 		246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */; };
 		248179551B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248179541B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m */; };
+		248179581B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248179571B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m */; };
 		771D73FA1B36FDD500074894 /* HOOHistoricoClienteTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */; };
 		772986711B30B568005DBBB5 /* UIFloatLabelTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 772986701B30B568005DBBB5 /* UIFloatLabelTextField.m */; };
 		772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772FDAAD1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m */; };
@@ -87,6 +88,8 @@
 		246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOHistoricoClienteViewController.m; path = ../HOOHistoricoClienteViewController.m; sourceTree = "<group>"; };
 		248179531B3A079C00143D7E /* HOOInformacoesProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOInformacoesProfissionalViewController.h; sourceTree = "<group>"; };
 		248179541B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOInformacoesProfissionalViewController.m; sourceTree = "<group>"; };
+		248179561B3A6D4F00143D7E /* HOOInformacoesClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOInformacoesClienteViewController.h; sourceTree = "<group>"; };
+		248179571B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOInformacoesClienteViewController.m; sourceTree = "<group>"; };
 		771D73F81B36FDD500074894 /* HOOHistoricoClienteTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOHistoricoClienteTVCell.h; sourceTree = "<group>"; };
 		771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOHistoricoClienteTVCell.m; sourceTree = "<group>"; };
 		7729866F1B30B568005DBBB5 /* UIFloatLabelTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIFloatLabelTextField.h; path = ../UIFloatLabelTextField.h; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 				243CC9131B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m */,
 				243CC9151B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.h */,
 				243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */,
+				248179561B3A6D4F00143D7E /* HOOInformacoesClienteViewController.h */,
+				248179571B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m */,
 			);
 			name = "Módulo profissional";
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 				77AE668D1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m in Sources */,
 				77C005DD1B29BB3300E2F27D /* HOOAgendarServicoViewController.m in Sources */,
 				772FDAB11B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m in Sources */,
+				248179581B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m in Sources */,
 				79BBC3751B30724700445A87 /* HOOListaPropostasCell.m in Sources */,
 				246A56751B263CB3007044A7 /* HOOCadastroProffisionalViewController.m in Sources */,
 				79BBC3711B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m in Sources */,
