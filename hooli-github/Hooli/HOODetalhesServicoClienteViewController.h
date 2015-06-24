@@ -10,7 +10,6 @@
 #import <Parse/Parse.h>
 #import "HOOListaPropostasCell.h"
 #import "HOODetalhesProfissionalViewController.h"
-#import "HOOInformacoesProfissionalViewController.h"
 @interface HOODetalhesServicoClienteViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *labelTipo;
 @property (weak, nonatomic) IBOutlet UILabel *labelDateAndHour;

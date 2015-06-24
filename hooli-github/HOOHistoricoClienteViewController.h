@@ -10,9 +10,12 @@
 #import <Parse/Parse.h>
 #import "HOODetalhesServicoClienteViewController.h"
 #import "HOOHistoricoClienteTVCell.h"
-
+#import "HOOInformacoesProfissionalViewController.h"
 @interface HOOHistoricoClienteViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+
 - (IBAction)segmentedAction:(id)sender;
 
 @end

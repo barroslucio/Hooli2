@@ -16,7 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initOutlets];
+
+}
+- (void)initOutlets{
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query whereKey:@"objectId" equalTo:self.idProfissional];
+    PFObject *profissional = [query getFirstObject];
+    self.lbNome.text = [profissional objectForKey:@"nome"];
+    self.lbEndereco.text = [profissional objectForKey:@"endereco"];
+    self.lbCidade.text = [profissional objectForKey:@"cidade"];
+    self.lbEstado.text = [profissional objectForKey:@"estado"];
+    self.lbEmail.text = [profissional objectForKey:@"email"];
+    self.lbDDD.text = [[profissional objectForKey:@"ddd"] stringValue];
+    self.lbTelefone.text = [[profissional objectForKey:@"telefone"] stringValue];
 }
 
 - (void)didReceiveMemoryWarning {

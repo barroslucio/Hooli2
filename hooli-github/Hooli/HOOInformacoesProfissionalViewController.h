@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface HOOInformacoesProfissionalViewController : UIViewController
 
@@ -19,6 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbTelefone;
 - (IBAction)voltar:(id)sender;
 
-@property(nonatomic) NSString *idCliente;
+@property(nonatomic) NSString *idProfissional;
 
 @end

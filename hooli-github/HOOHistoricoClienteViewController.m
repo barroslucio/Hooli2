@@ -111,26 +111,47 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(type == 0)
+    {
+        [self performSegueWithIdentifier:@"detalheHistoricoServico" sender:self];
+
+    }else{
+        [self performSegueWithIdentifier:@"detalheProfissionalEscolhido" sender:self];
+
+    }
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    HOODetalhesServicoClienteViewController *destinationViewController = [segue destinationViewController];
 
     
     if ([segue.identifier isEqual:@"detalheHistoricoServico"]) {
+        
+        HOODetalhesServicoClienteViewController *destinationViewController = [segue destinationViewController];
 
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSString *idServico;
-        if (type == 0) {
-            idServico = [self.arrayServicosPendentes[indexPath.row] objectId];
-        } else {
-            idServico = [self.arrayServicosEscolhidos[indexPath.row] objectId];
-        }
-        
+        idServico = [self.arrayServicosPendentes[indexPath.row] objectId];
         destinationViewController.idServico = idServico;
-    } else {
-        destinationViewController.idServico = nil;
+    } else if ([segue.identifier isEqual:@"detalheProfissionalEscolhido"]) {
+        HOOInformacoesProfissionalViewController *destinationViewController = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PFObject *object = (PFObject *)self.arrayServicosEscolhidos[indexPath.row][@"proEscolhido"];
+        
+        NSString *idProfissional = [object objectId];
+
+        
+        destinationViewController.idProfissional = idProfissional;
 
     }
+    
+//    else {
+//        destinationViewController.idServico = nil;
+//
+//    }
 }
 
 

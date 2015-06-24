@@ -895,7 +895,6 @@
                                             <outlet property="imagemTipoServico" destination="MrU-bp-afJ" id="Luy-Y4-Q1G"/>
                                             <outlet property="labelDataServico" destination="HA1-Ba-W8J" id="lbD-Q5-Elg"/>
                                             <outlet property="labelTipoServico" destination="jLc-xj-Oxt" id="OAV-rW-QSb"/>
-                                            <segue destination="ZoW-Yp-jSD" kind="show" identifier="detalheHistoricoServico" id="bNp-Sa-mCy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -924,6 +923,7 @@
                         <outlet property="segmentedControl" destination="b4g-qh-g1G" id="6XF-Wc-jwC"/>
                         <outlet property="tableView" destination="Hkg-jF-R7h" id="sL3-Hv-o3Y"/>
                         <segue destination="yAb-8t-rgD" kind="show" identifier="detalheProfissionalEscolhido" id="rPl-ZP-O33"/>
+                        <segue destination="ZoW-Yp-jSD" kind="show" identifier="detalheHistoricoServico" id="XzK-Bo-sdo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qI9-yP-mhn" userLabel="First Responder" sceneMemberID="firstResponder"/>

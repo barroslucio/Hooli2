@@ -188,16 +188,12 @@
 				79A197801B29BD90009A3152 /* HOOPerfilClienteViewController.m */,
 				77C005DB1B29BB3300E2F27D /* HOOAgendarServicoViewController.h */,
 				77C005DC1B29BB3300E2F27D /* HOOAgendarServicoViewController.m */,
-				77EF52991B34FCD60041F579 /* HOOAgendarServicoTVCell.h */,
-				77EF529A1B34FCD60041F579 /* HOOAgendarServicoTVCell.m */,
 				77AE66881B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.h */,
 				77AE66891B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m */,
 				77AE668B1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.h */,
 				77AE668C1B2A1720008231BA /* HOOAgendaOutroEnderecoViewController.m */,
 				246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */,
 				246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */,
-				771D73F81B36FDD500074894 /* HOOHistoricoClienteTVCell.h */,
-				771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */,
 				243CC90C1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.h */,
 				243CC90D1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m */,
 				79BBC3761B31CE6B00445A87 /* HOODetalhesProfissionalViewController.h */,
@@ -314,6 +310,10 @@
 			children = (
 				79BBC3731B30724700445A87 /* HOOListaPropostasCell.h */,
 				79BBC3741B30724700445A87 /* HOOListaPropostasCell.m */,
+				771D73F81B36FDD500074894 /* HOOHistoricoClienteTVCell.h */,
+				771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */,
+				77EF52991B34FCD60041F579 /* HOOAgendarServicoTVCell.h */,
+				77EF529A1B34FCD60041F579 /* HOOAgendarServicoTVCell.m */,
 			);
 			name = CustonCell;
 			sourceTree = "<group>";
