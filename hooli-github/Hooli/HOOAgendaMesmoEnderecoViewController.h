@@ -12,7 +12,7 @@
 
 @interface HOOAgendaMesmoEnderecoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *servico;
-@property (strong, nonatomic) IBOutlet UIView *subviewData;
+@property (strong, nonatomic) IBOutlet UITextField *textFieldData;
 
 @property (weak, nonatomic) IBOutlet UITextView *descricaoField;
 

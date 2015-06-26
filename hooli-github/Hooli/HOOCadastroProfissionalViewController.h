@@ -1,17 +1,15 @@
 //
-//  HOOClienteViewController.h
+//  HOOCadastroProffisionalViewController.h
 //  Hooli
 //
-//  Created by Rodrigo DAngelo Silva Machado on 6/9/15.
+//  Created by EDILBERTO DA SILVA RAMOS JUNIOR on 08/06/15.
 //  Copyright (c) 2015 Hooli. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-
-@interface HOOCadastroClienteViewController : UIViewController
+@interface HOOCadastroProfissionalViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-- (IBAction)salvar:(id)sender;
 @end

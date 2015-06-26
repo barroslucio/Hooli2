@@ -28,7 +28,6 @@
     self.lbCidade.text = [profissional objectForKey:@"cidade"];
     self.lbEstado.text = [profissional objectForKey:@"estado"];
     self.lbEmail.text = [profissional objectForKey:@"email"];
-    self.lbDDD.text = [[profissional objectForKey:@"ddd"] stringValue];
     self.lbTelefone.text = [[profissional objectForKey:@"telefone"] stringValue];
 }
 

@@ -1,17 +1,18 @@
 //
-//  HOOPerfilProfissionalViewController.m
+//  HOOCadastroProffisionalViewController.m
 //  Hooli
 //
-//  Created by Rodrigo DAngelo Silva Machado on 6/15/15.
+//  Created by EDILBERTO DA SILVA RAMOS JUNIOR on 08/06/15.
 //  Copyright (c) 2015 Hooli. All rights reserved.
 //
 
-#import "HOOPerfilProfissionalViewController.h"
+
+#import "HOOCadastroProfissionalViewController.h"
 #import "HOOCadastroClienteTVCell.h"
 #import "HOOCadastroProfissionalTVCell.h"
 
-@interface HOOPerfilProfissionalViewController ()<UITextFieldDelegate>
-{
+
+@interface HOOCadastroProfissionalViewController() <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>{
     UITextField *_textFieldBeingEdited;
     BOOL alvenaria;
     BOOL chaveiro;
@@ -29,13 +30,18 @@
     NSNumber *rg;
     NSNumber *cpf;
     NSString *nome;
+
 }
 
 
 
 @end
 
-@implementation HOOPerfilProfissionalViewController
+@implementation HOOCadastroProfissionalViewController
+- (IBAction)salvar:(id)sender {
+    [self cadastraProfissional];
+}
+
 -(void)textFieldDidBeginEditing:(nonnull UITextField *)textField{
     _textFieldBeingEdited = textField;
 }
@@ -43,16 +49,15 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PFUser *user = [PFUser currentUser];
-    
+
     if (indexPath.section == 0){
         
         HOOCadastroClienteTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-        
+
         if (indexPath.row == 0)
         {
             cell.label.text = @"Nome";
-            cell.textField.text = user[@"nome"];
+            cell.textField.placeholder = @"Lúcio Barros";
             cell.image.image = [UIImage imageNamed:@"emailIcon"];
             
             
@@ -61,9 +66,9 @@
         if (indexPath.row == 1)
         {
             cell.label.text = @"Email";
-            cell.textField.text = user.email;
+            cell.textField.placeholder = @"example@example.com";
             cell.image.image = [UIImage imageNamed:@"emailIcon"];
-            
+
             
         }
         
@@ -77,45 +82,45 @@
         if (indexPath.row == 3)
         {
             cell.label.text = @"Estado";
-            cell.textField.text = user[@"estado"];
+            cell.textField.placeholder = @"Amazonas";
             
         }
         
         if (indexPath.row == 4)
         {
             cell.label.text = @"Cidade";
-            cell.textField.text = user[@"Cidade"];
+            cell.textField.placeholder = @"Manaus";
             
         }
         
         if (indexPath.row == 5)
         {
             cell.label.text = @"Endereco";
-            cell.textField.text = user[@"endereco"];
+            cell.textField.placeholder = @"Av. Djalma Batista, 136";
             
         }
         
         if (indexPath.row == 6)
         {
             cell.label.text = @"Telefone";
-            cell.textField.text = [user[@"telefone"] stringValue];
+            cell.textField.placeholder = @"(92) 991234-9999";
             
         }
         if (indexPath.row == 7)
         {
             cell.label.text = @"RG";
-            cell.textField.text = [user[@"rg"] stringValue];
+            cell.textField.placeholder = @"2036525-0";
         }
         if (indexPath.row == 8)
         {
             cell.label.text = @"CPF";
-            cell.textField.text = [user[@"cpf"] stringValue];
+            cell.textField.placeholder = @"770.690.244-09";
         }
         [cell.textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         cell.textField.delegate = self;
         
         return cell;
-        
+
     }
     else{
         HOOCadastroProfissionalTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellSwitch"];
@@ -194,7 +199,7 @@
         f.numberStyle = NSNumberFormatterDecimalStyle;
         cpf = [f numberFromString:textField.text];
     }
-    
+
     _textFieldBeingEdited = nil;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -222,7 +227,7 @@
 }
 
 - (void) switchChanged:(id)sender {
-    CGPoint switchPositionPoint = [sender convertPoint:CGPointZero toView:[self tableView]];
+   CGPoint switchPositionPoint = [sender convertPoint:CGPointZero toView:[self tableView]];
     NSIndexPath *indexPath = [[self tableView] indexPathForRowAtPoint:switchPositionPoint];
     NSLog(@"%ld",indexPath.row);
     UISwitch* switchControl = sender;
@@ -295,5 +300,6 @@
     [super didReceiveMemoryWarning];
     
 }
+
 
 @end

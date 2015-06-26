@@ -14,7 +14,6 @@
     NSString *strInvertedDate;
     NSString *strComb;
     NSString *tipoServico;
-    UIFloatLabelTextField *dataTextField;
 }
 
 @end
@@ -55,25 +54,10 @@
     
     
     self.descricaoField.delegate = self;
+    self.textFieldData.placeholder = @"Data do serviço";
+    self.textFieldData.delegate = self;
     
-    dataTextField = [UIFloatLabelTextField new];
-    [dataTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    dataTextField.floatLabelActiveColor = [UIColor orangeColor];
-    dataTextField.placeholder = @"Data do serviço";
-    dataTextField.delegate = self;
-    [self.subviewData addSubview:dataTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[dataTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[dataTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
-    
+       
     
     //OCULTA TECLADO
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
@@ -98,7 +82,7 @@
     self.pickerDate.date = [NSDate date];
     self.pickerDate.locale = locale;
     self.pickerDate.minuteInterval = 1;
-    dataTextField.inputView = self.pickerDate;
+    self.textFieldData.inputView = self.pickerDate;
     [self.pickerDate addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
     
     
@@ -115,14 +99,14 @@
     
     strDate = [dateFormatter stringFromDate:datePicker.date];
     strInvertedDate = [invertedDateFormatter stringFromDate:datePicker.date];
-    dataTextField.text = [NSString stringWithFormat:@"%@",strDate];
+    self.textFieldData.text = [NSString stringWithFormat:@"%@",strDate];
     
     
 }
 
 
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender{
-    [dataTextField resignFirstResponder];
+    [self.textFieldData resignFirstResponder];
     [self.descricaoField resignFirstResponder];
     
     
@@ -138,7 +122,7 @@
 - (IBAction)agendaServico:(id)sender {
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.descricaoField.text isEqualToString:@""]  && ![dataTextField.text isEqualToString:@""])
+    if (![self.descricaoField.text isEqualToString:@""]  && ![self.textFieldData.text isEqualToString:@""])
     {
         PFUser *user = [PFUser currentUser];
     

@@ -8,7 +8,7 @@
 
 #import "HOOEscolhaCadastroViewController.h"
 #import "HOOCadastroClienteViewController.h"
-#import "HOOCadastroProffisionalViewController.h"
+#import "HOOCadastroProfissionalViewController.h"
 
 @interface HOOEscolhaCadastroViewController ()
 
@@ -48,7 +48,7 @@
 //método chamado caso o usuário queira se cadastrar como profissional.
 - (IBAction)profissional:(id)sender {
     
-    HOOCadastroProffisionalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroPro"];
+    HOOCadastroProfissionalViewController *modalVC = [self.storyboard instantiateViewControllerWithIdentifier:@"cadastroPro"];
     
     modalVC.transitioningDelegate = self;
     

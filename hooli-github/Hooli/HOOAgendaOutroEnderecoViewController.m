@@ -15,8 +15,6 @@
     NSString *strTime;
     NSString *strComb;
     NSString *tipoServico;
-    UIFloatLabelTextField *enderecoTextField;
-    UIFloatLabelTextField *dataTextField;
 
 
 }
@@ -59,50 +57,14 @@
     NSLog(@"%d",self.tipoDeServico);
     
     self.textFieldDate.delegate = self;
-    self.textFieldTime.delegate = self;
     self.descricaoField.delegate = self;
-    enderecoTextField.delegate = self;
-    dataTextField.delegate = self;
+    self.enderecoField.delegate = self;
+    self.enderecoField.placeholder = @"Endereço";
     
-    enderecoTextField = [UIFloatLabelTextField new];
-    [enderecoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    enderecoTextField.floatLabelActiveColor = [UIColor orangeColor];
-    enderecoTextField.placeholder = @"Endereço";
-    enderecoTextField.delegate = self;
-    [self.subviewEndereco addSubview:enderecoTextField];
+    self.textFieldDate.placeholder = @"Data do serviço";
+    self.textFieldDate.delegate = self;
     
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[enderecoTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[enderecoTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
-    
-    dataTextField = [UIFloatLabelTextField new];
-    [dataTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    dataTextField.floatLabelActiveColor = [UIColor orangeColor];
-    dataTextField.placeholder = @"Data do serviço";
-    dataTextField.delegate = self;
-    [self.subviewData addSubview:dataTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[dataTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[dataTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(dataTextField)]];
-    
-
-    
-
     //OCULTA TECLADO
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
     [tapGesture setNumberOfTouchesRequired:1];
@@ -126,16 +88,10 @@
     self.pickerDate.date = [NSDate date];
     self.pickerDate.locale = locale;
     self.pickerDate.minuteInterval = 1;
-    dataTextField.inputView = self.pickerDate;
+    self.textFieldDate.inputView = self.pickerDate;
     [self.pickerDate addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
     
     
-    self.pickerTime = [[UIDatePicker alloc] init];
-    self.pickerTime.locale = locale;
-    self.pickerTime.datePickerMode = UIDatePickerModeTime;
-    self.textFieldTime.inputView = self.pickerTime;
-    [self.pickerTime addTarget:self action:@selector(timePickerChanged:) forControlEvents:UIControlEventValueChanged];
-
 }
 
 -(void) datePickerChanged: (UIDatePicker *)datePicker{
@@ -147,31 +103,16 @@
 
     strDate = [dateFormatter stringFromDate:datePicker.date];
     strInvertedDate = [invertedDateFormatter stringFromDate:datePicker.date];
-    dataTextField.text = [NSString stringWithFormat:@"Data do serviço: %@",strDate];
+    self.textFieldDate.text = [NSString stringWithFormat:@"Data do serviço: %@",strDate];
 
     NSLog(@"---date");
 
 }
 
--(void) timePickerChanged: (UIDatePicker *)datePicker{
-    
-    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setDateFormat:@"HH:mm"];
-    strTime = [timeFormatter stringFromDate:datePicker.date];
-    
-    self.textFieldTime.text = [NSString stringWithFormat:@"Hora do serviço: %@",strTime];
-
-    NSLog(@"---time %@", self.textFieldTime.text);
-
-    
-}
-
 -(void)ocultaTeclado:(UITapGestureRecognizer *)sender{
     [self.textFieldDate resignFirstResponder];
-    [dataTextField resignFirstResponder];
-    [enderecoTextField resignFirstResponder];
+    [self.enderecoField resignFirstResponder];
     [self.descricaoField resignFirstResponder];
-
     
 }
 
@@ -187,12 +128,12 @@
 - (IBAction)agendaServico:(id)sender {
     
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.descricaoField.text isEqualToString:@""] && ![dataTextField.text isEqualToString:@""] && ![self.textFieldTime.text isEqualToString:@""] && ![enderecoTextField.text isEqualToString:@""])
+    if (![self.descricaoField.text isEqualToString:@""] && ![self.textFieldDate.text isEqualToString:@""] && ![self.enderecoField.text isEqualToString:@""])
     {
         
         PFObject *servico = [PFObject objectWithClassName:@"Servico"];
         [servico setObject:[PFUser currentUser] forKey:@"User"];
-        servico[@"endereco"] = enderecoTextField.text;
+        servico[@"endereco"] = self.enderecoField.text;
         servico[@"descricao"] = self.descricaoField.text;
         servico[@"dataServico"] = strInvertedDate;
         servico[@"tipo"] = tipoServico;

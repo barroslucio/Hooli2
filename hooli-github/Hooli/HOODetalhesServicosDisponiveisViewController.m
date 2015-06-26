@@ -10,7 +10,6 @@
 #import "HOOHistoricoServicosProfissionalViewController.h"
 #import "HOODetalhesHistoricoServicoProfissionalViewController.h"
 @interface HOODetalhesServicosDisponiveisViewController ()<UITextFieldDelegate>{
-    UIFloatLabelTextField *valorTextField;
 
 }
 
@@ -32,29 +31,13 @@
 
 - (void)initProperties
 {
-    
-            self.tipoServico.text = self.servico[@"tipo"];
-            self.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:self.servico[@"dataServico"]];
-    
-    valorTextField = [UIFloatLabelTextField new];
-    [valorTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    valorTextField.floatLabelActiveColor = [UIColor orangeColor];
-    valorTextField.placeholder = @"Preço do Serviço";
-    valorTextField.delegate = self;
-    valorTextField.keyboardType = UIKeyboardTypeNumberPad;
-    [self.subviewValor addSubview:valorTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[valorTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(valorTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[valorTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(valorTextField)]];
-    
+    self.tipoServico.text = self.servico[@"tipo"];
+    self.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:self.servico[@"dataServico"]];
+    self.descricaoServico.text = self.servico[@"descricao"];
+    self.descricaoServico.editable = NO;
+    self.valorTextField.placeholder = @"Preço do Serviço";
+    self.valorTextField.delegate = self;
+    self.valorTextField.keyboardType = UIKeyboardTypeNumberPad;
 
 }
 
@@ -72,11 +55,11 @@
 {
     NSString *statusCadastro;
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![valorTextField.text isEqualToString:@""])
+    if (![self.valorTextField.text isEqualToString:@""])
     {
         
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-        NSNumber *valor = [formatter numberFromString:valorTextField.text];
+        NSNumber *valor = [formatter numberFromString:self.valorTextField.text];
     
         PFObject *proposta = [PFObject objectWithClassName:@"Proposta"];
         [proposta setObject: [PFUser currentUser] forKey:@"profissional"];

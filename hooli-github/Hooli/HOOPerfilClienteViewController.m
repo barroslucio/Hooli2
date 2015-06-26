@@ -8,7 +8,7 @@
 
 #import "HOOPerfilClienteViewController.h"
 #import "HOOAgendarServicoViewController.h"
-#import "HOOCadastroProffisionalViewController.h"
+#import "HOOCadastroProfissionalViewController.h"
 #import "HOOLoginViewController.h"
 
 
@@ -31,6 +31,24 @@
 {
     [super viewDidLoad];
     
+    [self.subviewEmail.layer setCornerRadius:15.0f];
+    self.subviewEmail.layer.masksToBounds = YES;
+    
+    [self.subviewEndereco.layer setCornerRadius:15.0f];
+    self.subviewEndereco.layer.masksToBounds = YES;
+    
+    [self.subviewDDD.layer setCornerRadius:15.0f];
+    self.subviewDDD.layer.masksToBounds = YES;
+    
+    [self.subviewCidade.layer setCornerRadius:15.0f];
+    self.subviewCidade.layer.masksToBounds = YES;
+    
+    [self.subviewEstado.layer setCornerRadius:15.0f];
+    self.subviewEstado.layer.masksToBounds = YES;
+    
+    [self.subviewTelefone.layer setCornerRadius:15.0f];
+    self.subviewEstado.layer.masksToBounds = YES;
+       
     estadoTextField = [UIFloatLabelTextField new];
     [estadoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
     estadoTextField.floatLabelActiveColor = [UIColor orangeColor];
