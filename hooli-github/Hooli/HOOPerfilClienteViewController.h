@@ -13,12 +13,12 @@
 @interface HOOPerfilClienteViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 
-@property (strong, nonatomic) IBOutlet UIView *subviewEstado;
-@property (strong, nonatomic) IBOutlet UIView *subviewCidade;
-@property (strong, nonatomic) IBOutlet UIView *subviewEndereco;
-@property (strong, nonatomic) IBOutlet UIView *subviewDDD;
-@property (strong, nonatomic) IBOutlet UIView *subviewTelefone;
-@property (strong, nonatomic) IBOutlet UIView *subviewEmail;
+@property (weak, nonatomic) IBOutlet UITextField *tfEmail;
+@property (weak, nonatomic) IBOutlet UITextField *tfEstado;
+@property (weak, nonatomic) IBOutlet UITextField *tfCidade;
+@property (weak, nonatomic) IBOutlet UITextField *tfEndereco;
+@property (weak, nonatomic) IBOutlet UITextField *tfTelefone;
+
 
 //ARRAY DE ESTADOS
 @property (nonatomic) NSArray* arrayUF;

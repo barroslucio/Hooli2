@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -421,89 +421,47 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nd9-Je-YlK" userLabel="subviewEmail">
-                                <rect key="frame" x="38" y="195" width="298" height="45"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="bTM-0q-uAg"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGW-gu-fBK" userLabel="subviewEstado">
-                                <rect key="frame" x="38" y="312" width="298" height="45"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="6Os-4K-LuY"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ife-e4-uX7" userLabel="subviewCidade">
-                                <rect key="frame" x="38" y="370" width="298" height="45"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="1qU-9h-aa5"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTu-pJ-IAQ" userLabel="subviewDDD">
-                                <rect key="frame" x="38" y="254" width="82" height="45"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="faq-ni-tVH"/>
-                                    <constraint firstAttribute="height" constant="45" id="p2P-Ps-HBM"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zud-9Z-ei0" userLabel="subviewEndereco">
-                                <rect key="frame" x="38" y="428" width="298" height="45"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="l0E-1R-zDj"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U9D-EB-EuN" userLabel="subviewTelefone">
-                                <rect key="frame" x="121" y="254" width="215" height="45"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="aj6-x1-Xv6"/>
-                                    <constraint firstAttribute="height" constant="45" id="toP-bt-4gs"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="toP-bt-4gs"/>
-                                    </mask>
-                                </variation>
-                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C4P-uC-E3c">
+                                <rect key="frame" x="81" y="148" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4RX-7g-MB4">
+                                <rect key="frame" x="81" y="198" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="szy-5d-aVR">
+                                <rect key="frame" x="81" y="252" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-kZ-mQE">
+                                <rect key="frame" x="81" y="306" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Nn-dJ-5oJ">
+                                <rect key="frame" x="81" y="358" width="225" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Eu0-Py-NWa" firstAttribute="leading" secondItem="vpP-f7-4ny" secondAttribute="leadingMargin" constant="-16" id="22h-4n-SqU"/>
-                            <constraint firstItem="nd9-Je-YlK" firstAttribute="top" secondItem="Eu0-Py-NWa" secondAttribute="bottom" constant="20" id="357-NI-I8z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eu0-Py-NWa" secondAttribute="trailing" constant="-16" id="6J7-8s-xMG"/>
-                            <constraint firstItem="U9D-EB-EuN" firstAttribute="leading" secondItem="mTu-pJ-IAQ" secondAttribute="trailing" constant="1" id="Bku-lB-ms0"/>
-                            <constraint firstItem="zud-9Z-ei0" firstAttribute="leading" secondItem="vpP-f7-4ny" secondAttribute="leadingMargin" constant="-16" id="DQ1-S4-JQK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="U9D-EB-EuN" secondAttribute="trailing" constant="-16" id="ISK-my-rhx"/>
-                            <constraint firstItem="sGW-gu-fBK" firstAttribute="leading" secondItem="vpP-f7-4ny" secondAttribute="leadingMargin" constant="-16" id="KaM-eN-ilc"/>
-                            <constraint firstItem="U9D-EB-EuN" firstAttribute="top" secondItem="nd9-Je-YlK" secondAttribute="bottom" constant="1" id="Yct-9x-uCa"/>
                             <constraint firstItem="Eu0-Py-NWa" firstAttribute="top" secondItem="iCc-Zs-A0s" secondAttribute="bottom" id="YjU-vh-EPU"/>
-                            <constraint firstItem="nd9-Je-YlK" firstAttribute="leading" secondItem="vpP-f7-4ny" secondAttribute="leadingMargin" constant="-16" id="Zai-xW-54x"/>
-                            <constraint firstItem="zud-9Z-ei0" firstAttribute="top" secondItem="ife-e4-uX7" secondAttribute="bottom" constant="1" id="kTP-le-KFG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zud-9Z-ei0" secondAttribute="trailing" constant="-16" id="o4l-aa-Zio"/>
-                            <constraint firstItem="ife-e4-uX7" firstAttribute="top" secondItem="sGW-gu-fBK" secondAttribute="bottom" constant="1" id="oYq-XX-w6o"/>
-                            <constraint firstItem="sGW-gu-fBK" firstAttribute="top" secondItem="U9D-EB-EuN" secondAttribute="bottom" constant="1" id="qh7-ae-7Sy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sGW-gu-fBK" secondAttribute="trailing" constant="-16" id="qs7-2S-X8M"/>
-                            <constraint firstItem="ife-e4-uX7" firstAttribute="leading" secondItem="vpP-f7-4ny" secondAttribute="leadingMargin" constant="-16" id="vdi-OI-4l9"/>
-                            <constraint firstItem="mTu-pJ-IAQ" firstAttribute="leading" secondItem="vpP-f7-4ny" secondAttribute="leadingMargin" constant="-16" id="vi4-0A-tbg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nd9-Je-YlK" secondAttribute="trailing" constant="-16" id="woh-dQ-VDM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ife-e4-uX7" secondAttribute="trailing" constant="-16" id="xsP-ag-DRW"/>
-                            <constraint firstItem="sGW-gu-fBK" firstAttribute="top" secondItem="mTu-pJ-IAQ" secondAttribute="bottom" constant="1" id="yTx-PP-buK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" id="FQ0-cl-X4P"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="subviewCidade" destination="ife-e4-uX7" id="XPQ-tM-BU0"/>
-                        <outlet property="subviewDDD" destination="mTu-pJ-IAQ" id="2NX-sa-E7H"/>
-                        <outlet property="subviewEmail" destination="nd9-Je-YlK" id="e9v-gg-bhP"/>
-                        <outlet property="subviewEndereco" destination="zud-9Z-ei0" id="yLQ-uq-hGA"/>
-                        <outlet property="subviewEstado" destination="sGW-gu-fBK" id="O6c-fp-UEY"/>
-                        <outlet property="subviewTelefone" destination="U9D-EB-EuN" id="k8T-nJ-cds"/>
+                        <outlet property="tfCidade" destination="szy-5d-aVR" id="9Xw-bT-uNQ"/>
+                        <outlet property="tfEmail" destination="C4P-uC-E3c" id="91f-PW-WZP"/>
+                        <outlet property="tfEndereco" destination="JnE-kZ-mQE" id="UrG-Z5-xyA"/>
+                        <outlet property="tfEstado" destination="4RX-7g-MB4" id="eVo-dZ-Zy8"/>
+                        <outlet property="tfTelefone" destination="0Nn-dJ-5oJ" id="kVy-Dc-0rF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPl-Yu-GPw" userLabel="First Responder" sceneMemberID="firstResponder"/>

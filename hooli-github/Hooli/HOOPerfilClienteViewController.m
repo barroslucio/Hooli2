@@ -31,23 +31,20 @@
 {
     [super viewDidLoad];
     
-    [self.subviewEmail.layer setCornerRadius:15.0f];
-    self.subviewEmail.layer.masksToBounds = YES;
+    [self.tfEmail.layer setCornerRadius:15.0f];
+    self.tfEmail.layer.masksToBounds = YES;
     
-    [self.subviewEndereco.layer setCornerRadius:15.0f];
-    self.subviewEndereco.layer.masksToBounds = YES;
+    [self.tfEndereco.layer setCornerRadius:15.0f];
+    self.tfEndereco.layer.masksToBounds = YES;
     
-    [self.subviewDDD.layer setCornerRadius:15.0f];
-    self.subviewDDD.layer.masksToBounds = YES;
+    [self.tfCidade.layer setCornerRadius:15.0f];
+    self.tfCidade.layer.masksToBounds = YES;
     
-    [self.subviewCidade.layer setCornerRadius:15.0f];
-    self.subviewCidade.layer.masksToBounds = YES;
+    [self.tfEstado.layer setCornerRadius:15.0f];
+    self.tfEstado.layer.masksToBounds = YES;
     
-    [self.subviewEstado.layer setCornerRadius:15.0f];
-    self.subviewEstado.layer.masksToBounds = YES;
-    
-    [self.subviewTelefone.layer setCornerRadius:15.0f];
-    self.subviewEstado.layer.masksToBounds = YES;
+    [self.tfTelefone.layer setCornerRadius:15.0f];
+    self.tfEstado.layer.masksToBounds = YES;
        
     estadoTextField = [UIFloatLabelTextField new];
     [estadoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -55,7 +52,7 @@
     estadoTextField.placeholder = @"Estado";
     // estadoTextField.borderStyle = UITextBorderStyleLine;
     estadoTextField.delegate = self;
-    [self.subviewEstado addSubview:estadoTextField];
+    [self.tfEstado addSubview:estadoTextField];
     
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[estadoTextField]-0-|"
@@ -74,7 +71,7 @@
     emailTextField.placeholder = @"Email";
     //emailTextField.borderStyle = UITextBorderStyleLine;
     emailTextField.delegate = self;
-    [self.subviewEmail addSubview:emailTextField];
+    [self.tfEmail addSubview:emailTextField];
     
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[emailTextField]-0-|"
@@ -94,7 +91,7 @@
     cidadeTextField.placeholder = @"Cidade";
     //cidadeTextField.borderStyle = UITextBorderStyleNone;
     cidadeTextField.delegate = self;
-    [self.subviewCidade addSubview:cidadeTextField];
+    [self.tfCidade addSubview:cidadeTextField];
     
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cidadeTextField]-0-|"
@@ -107,24 +104,7 @@
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(cidadeTextField)]];
     
-    dddTextField = [UIFloatLabelTextField new];
-    [dddTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    dddTextField.floatLabelActiveColor = [UIColor orangeColor];
-    dddTextField.placeholder = @"DDD";
-    //dddTextField.borderStyle = UITextBorderStyleNone;
-    dddTextField.delegate = self;
-    [self.subviewDDD addSubview:dddTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[dddTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(dddTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[dddTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(dddTextField)]];
+   
     
     enderecoTextField = [UIFloatLabelTextField new];
     [enderecoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -132,7 +112,7 @@
     enderecoTextField.placeholder = @"Endereço";
     // enderecoTextField.borderStyle = UITextBorderStyleNone;
     enderecoTextField.delegate = self;
-    [self.subviewEndereco  addSubview:enderecoTextField];
+    [self.tfEndereco  addSubview:enderecoTextField];
     
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[enderecoTextField]-0-|"
@@ -151,7 +131,7 @@
     telefoneTextField.placeholder = @"Telefone";
     //telefoneTextField.borderStyle = UITextBorderStyleLine;
     telefoneTextField.delegate = self;
-    [self.subviewTelefone addSubview:telefoneTextField];
+    [self.tfTelefone addSubview:telefoneTextField];
     
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[telefoneTextField]-0-|"
