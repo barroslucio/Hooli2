@@ -13,6 +13,8 @@
 		246A56751B263CB3007044A7 /* HOOCadastroProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProfissionalViewController.m */; };
 		246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */; };
 		248007821B3F2C9F00B0C093 /* HOOAlertControllerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 248007811B3F2C9F00B0C093 /* HOOAlertControllerStyle.m */; };
+		248007861B40824900B0C093 /* HOOShowAtributosTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 248007851B40824900B0C093 /* HOOShowAtributosTVCell.m */; };
+		248007891B40976B00B0C093 /* HOOShowDescricaoTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 248007881B40976B00B0C093 /* HOOShowDescricaoTVCell.m */; };
 		248179551B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248179541B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m */; };
 		248179581B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248179571B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m */; };
 		771D73FA1B36FDD500074894 /* HOOHistoricoClienteTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */; };
@@ -91,6 +93,10 @@
 		246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOHistoricoClienteViewController.m; path = ../HOOHistoricoClienteViewController.m; sourceTree = "<group>"; };
 		248007801B3F2C9F00B0C093 /* HOOAlertControllerStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOAlertControllerStyle.h; sourceTree = "<group>"; };
 		248007811B3F2C9F00B0C093 /* HOOAlertControllerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOAlertControllerStyle.m; sourceTree = "<group>"; };
+		248007841B40824900B0C093 /* HOOShowAtributosTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOShowAtributosTVCell.h; sourceTree = "<group>"; };
+		248007851B40824900B0C093 /* HOOShowAtributosTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOShowAtributosTVCell.m; sourceTree = "<group>"; };
+		248007871B40976B00B0C093 /* HOOShowDescricaoTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOShowDescricaoTVCell.h; sourceTree = "<group>"; };
+		248007881B40976B00B0C093 /* HOOShowDescricaoTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOShowDescricaoTVCell.m; sourceTree = "<group>"; };
 		248179531B3A079C00143D7E /* HOOInformacoesProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOInformacoesProfissionalViewController.h; sourceTree = "<group>"; };
 		248179541B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOInformacoesProfissionalViewController.m; sourceTree = "<group>"; };
 		248179561B3A6D4F00143D7E /* HOOInformacoesClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOInformacoesClienteViewController.h; sourceTree = "<group>"; };
@@ -277,6 +283,10 @@
 				77A88AD31B25E38C002BD992 /* AppDelegate.m */,
 				248007801B3F2C9F00B0C093 /* HOOAlertControllerStyle.h */,
 				248007811B3F2C9F00B0C093 /* HOOAlertControllerStyle.m */,
+				248007841B40824900B0C093 /* HOOShowAtributosTVCell.h */,
+				248007851B40824900B0C093 /* HOOShowAtributosTVCell.m */,
+				248007871B40976B00B0C093 /* HOOShowDescricaoTVCell.h */,
+				248007881B40976B00B0C093 /* HOOShowDescricaoTVCell.m */,
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
 				77EE11E41B3362E200262F0E /* HOOEscolhaCadastroViewController.h */,
@@ -466,6 +476,7 @@
 				243CC90E1B2D14D700ACF9F3 /* HOODetalhesServicoClienteViewController.m in Sources */,
 				248179551B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m in Sources */,
 				772FDAAE1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m in Sources */,
+				248007891B40976B00B0C093 /* HOOShowDescricaoTVCell.m in Sources */,
 				77A25D741B3C89EF00282AA6 /* HOOCadastroProfissionalTVCell.m in Sources */,
 				77A88AD41B25E38C002BD992 /* AppDelegate.m in Sources */,
 				243CC9141B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m in Sources */,
@@ -477,6 +488,7 @@
 				79A197811B29BD90009A3152 /* HOOPerfilClienteViewController.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,
 				243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */,
+				248007861B40824900B0C093 /* HOOShowAtributosTVCell.m in Sources */,
 				79BBC3781B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m in Sources */,
 				246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */,
 			);

@@ -53,7 +53,20 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
         return [self.arrayListaPro count];
+    
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+//-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+//    return @"-";
+//}
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    return @"----";
+//
+//}
 
 // função para listar o nome e o preço dos profissionais
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

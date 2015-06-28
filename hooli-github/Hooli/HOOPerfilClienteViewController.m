@@ -10,9 +10,20 @@
 #import "HOOAgendarServicoViewController.h"
 #import "HOOCadastroProfissionalViewController.h"
 #import "HOOLoginViewController.h"
+#import "HOOCadastroClienteTVCell.h"
 
 
-@interface HOOPerfilClienteViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
+@interface HOOPerfilClienteViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>{
+    NSString *estado;
+    NSString *cidade;
+    NSString *endereco;
+    NSNumber *telefone;
+    NSString *stringTelefone;
+    NSString *senha;
+    NSString *email;
+    UITextField *_textFieldBeingEdited;
+}
+
 
 
 @end
@@ -24,78 +35,30 @@
 {
     [super viewDidLoad];
     
-    [self.tfEmail.layer setCornerRadius:15.0f];
-    self.tfEmail.layer.masksToBounds = YES;
-    
-    [self.tfEndereco.layer setCornerRadius:15.0f];
-    self.tfEndereco.layer.masksToBounds = YES;
-    
-    [self.tfCidade.layer setCornerRadius:15.0f];
-    self.tfCidade.layer.masksToBounds = YES;
-    
-    [self.tfEstado.layer setCornerRadius:15.0f];
-    self.tfEstado.layer.masksToBounds = YES;
-    
-    [self.tfTelefone.layer setCornerRadius:15.0f];
-    self.tfEstado.layer.masksToBounds = YES;
-       
-    self.tfEstado.placeholder = @"Estado";
-    self.tfEstado.delegate = self;
-    
-    self.tfEmail.placeholder = @"Email";
-    self.tfEmail.delegate = self;
-
-    self.tfCidade.placeholder = @"Cidade";
-    self.tfCidade.delegate = self;
-    
-    
-    
-   
-    
-    self.tfEndereco.placeholder = @"Endereço";
-    self.tfEndereco.delegate = self;
-    
-    self.tfTelefone.placeholder = @"Telefone";
-    self.tfTelefone.delegate = self;
-
-    
-    
     
     PFUser *user = [PFUser currentUser];
     
-    self.tfEndereco.text = user[@"endereco"];
-    self.tfEmail.text = user[@"email"];
-    self.tfEstado.text = user[@"estado"];
-    self.tfCidade.text = user[@"cidade"];
-    self.tfTelefone.text = [user[@"telefone"] stringValue];
-    
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
-    [tapGesture setNumberOfTouchesRequired:1];
-    [[self view] addGestureRecognizer:tapGesture];
+    email = user.email;
+    senha = user.password;
+    cidade = user[@"cidade"];
+    estado = user[@"estado"];
+    endereco = user[@"endereco"];
+    telefone = user[@"telefone"];
     
     self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(100, 100, 300, 100)];
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
     self.pickerView.showsSelectionIndicator = YES;
-    self.tfEstado.inputView = self.pickerView;
     
     self.arrayUF = [HOOPerfilClienteViewController arrayUF];
     
-}
-
-+ (NSArray *)arrayUF{
-    NSArray* array = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Distrito Federal", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
     
-    return array;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
+    [tapGesture setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:tapGesture];
+        
 }
-
 //PIKER VIEW - ESTADOS
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
@@ -117,36 +80,156 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.tfEstado.text=[self.arrayUF objectAtIndex:row];
+    estado =[self.arrayUF objectAtIndex:row];
+    [self.tableView reloadData];
+}
+//--pikerview
+-(void)textFieldDidBeginEditing:(nonnull UITextField *)textField{
+    _textFieldBeingEdited = textField;
 }
 
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    PFUser *user = [PFUser currentUser];
+
+    HOOCadastroClienteTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    
+    if (indexPath.row == 0)
+    {
+        cell.label.text = @"Email";
+        cell.textField.text = user.email;
+        cell.image.image = [UIImage imageNamed:@"emailIcon"];
+        
+    }
+    
+    if (indexPath.row == 1)
+    {
+        cell.label.text = @"Senha";
+        cell.textField.secureTextEntry = YES;
+        cell.textField.placeholder = @"*********";
+        
+    }
+    
+    if (indexPath.row == 2)
+    {
+        cell.label.text = @"Estado";
+        cell.textField.text = user[@"estado"];
+        cell.textField.text = estado;
+        cell.textField.inputView = self.pickerView;
+        
+    }
+    
+    if (indexPath.row == 3)
+    {
+        cell.label.text = @"Cidade";
+        cell.textField.text = user[@"cidade"];
+        
+    }
+    
+    if (indexPath.row == 4)
+    {
+        cell.label.text = @"Endereco";
+        cell.textField.text = user[@"endereco"];
+        
+    }
+    
+    if (indexPath.row == 5)
+    {
+        cell.label.text = @"Telefone";
+        cell.textField.text = [user[@"telefone"] stringValue];
+        
+        
+    }
+  
+    
+    [cell.textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    cell.textField.delegate = self;
+    
+    return cell;
+    
+    
+}
+
+- (void)textFieldDidChange:(id)sender
+{
+    CGPoint textFieldPositionPoint = [sender convertPoint:CGPointZero toView:[self tableView]];
+    NSIndexPath *indexPath = [[self tableView] indexPathForRowAtPoint:textFieldPositionPoint];
+    //NSLog(@"%ld",indexPath.row);
+    UITextField* textField = sender;
+    if (indexPath.row == 0){
+        email = textField.text;
+    }
+    if (indexPath.row == 1){
+        senha = textField.text;
+    }
+    if (indexPath.row == 2){
+        estado = textField.text;
+    }
+    if (indexPath.row == 3){
+        cidade = textField.text;
+    }
+    if (indexPath.row == 4){
+        endereco = textField.text;
+    }
+    if (indexPath.row == 5){
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        f.numberStyle = NSNumberFormatterDecimalStyle;
+        telefone = [f numberFromString:textField.text];
+        stringTelefone = textField.text;
+        
+    }
+    
+    _textFieldBeingEdited = nil;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(_textFieldBeingEdited){
+        [_textFieldBeingEdited resignFirstResponder];
+    }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 6;
+}
+
+
+
+
+
++ (NSArray *)arrayUF{
+    NSArray* array = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Distrito Federal", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
+    
+    return array;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+}
 
 // procedimento para o teclado ser ocultado
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
-    [self.tfCidade resignFirstResponder];
-    [self.tfEmail resignFirstResponder];
-    [self.tfEndereco resignFirstResponder];
-    [self.tfEstado resignFirstResponder];
-    [self.tfTelefone resignFirstResponder];
 
 }
 
 
 - (void)atualizarDadosCliente{
     
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    NSNumber *telefone = [formatter numberFromString:self.tfTelefone.text];
     NSNumber *tipo = [NSNumber numberWithInt:0];
     
     PFUser *user = [PFUser currentUser];
+    user.username = email;
+    user.password = senha;
+    user.email = email;
     
-    
-    user[@"endereco"] = self.tfEndereco.text;
-    user[@"email"]= self.tfEmail.text;
-    user[@"estado"] = self.tfEstado.text;
-    user[@"cidade"] = self.tfCidade.text;
     user[@"telefone"] = telefone;
+    user[@"endereco"] = endereco;
+    user[@"cidade"] = cidade;
+    user[@"estado"] = estado;
     user[@"tipo"] = tipo;
     
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -168,19 +251,21 @@
 // salvando os dados dos clientes
 - (IBAction)salvar:(id)sender
 {
-    //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![self.tfEmail.text isEqualToString:@""]  && ![self.tfCidade.text isEqualToString:@""] && ![self.tfEstado.text isEqualToString:@""] && ![self.tfTelefone.text isEqualToString:@""] && ![self.tfEndereco.text isEqualToString:@""])
+    if (![email isEqualToString:@""] && ![senha isEqualToString:@""] && ![cidade isEqualToString:@""]  && ![estado isEqualToString:@""] && ![endereco isEqualToString:@""] && telefone!=NULL)
     {
-        //Método para salvar no Parse.com
-        [self atualizarDadosCliente];
+        
+            //Método para salvar no Parse.com
+            [self atualizarDadosCliente];
+        
     }
     
     else
     {
         UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Alerta!" andWithMessage:@"Preencha todos os campos"];
         [self presentViewController:alert animated:YES completion:nil];
-
+        
     }
+
     
     
 }

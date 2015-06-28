@@ -9,7 +9,10 @@
 #import "HOODetalhesServicosDisponiveisViewController.h"
 #import "HOOHistoricoServicosProfissionalViewController.h"
 #import "HOODetalhesHistoricoServicoProfissionalViewController.h"
-@interface HOODetalhesServicosDisponiveisViewController ()<UITextFieldDelegate>{
+#import "HOOShowAtributosTVCell.h"
+#import "HOOShowDescricaoTVCell.h"
+
+@interface HOODetalhesServicosDisponiveisViewController ()<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>{
 
 }
 
@@ -32,24 +35,105 @@
 - (void)initProperties
 {
     PFObject *user = (PFObject *)self.servico[@"User"];
-    
     PFQuery *queryUser = [PFQuery queryWithClassName:@"_User"];
     [queryUser whereKey:@"objectId" equalTo:[user objectId]];
     PFObject *objectUser =[queryUser getFirstObject];
-    self.labelCidade.text = objectUser[@"cidade"];
-    self.labelEstado.text = objectUser[@"estado"];
+    
+    
+    self.cidadeServico = objectUser[@"cidade"];
+    self.estadoServico = objectUser[@"estado"];
+    self.tipoServico = self.servico[@"tipo"];
+    self.descricaoServico = self.servico[@"descricao"];
+    self.enderecoServico = self.servico[@"endereco"];
+    self.dataServico = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:self.servico[@"dataServico"]];
 
     
-    self.tipoServico.text = self.servico[@"tipo"];
-    self.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:self.servico[@"dataServico"]];
-    self.descricaoServico.text = self.servico[@"descricao"];
-    self.enderecoServico.text = self.servico[@"endereco"];
-    self.descricaoServico.editable = NO;
+    
+    
     self.valorTextField.placeholder = @"Preço do Serviço";
     self.valorTextField.delegate = self;
     self.valorTextField.keyboardType = UIKeyboardTypeNumberPad;
 
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+        return 5;
+    }else{
+        return 1;
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.section == 0){
+        self.tableView.rowHeight = 76;
+
+        HOOShowAtributosTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        cell.textViewAtributo.editable = NO;
+        cell.textViewAtributo.scrollEnabled = NO;
+        cell.layer.masksToBounds = YES;
+
+        cell.layer.shadowRadius = 50;
+        if (indexPath.row == 0)
+        {
+        cell.labelTitle.text = @"Tipo:";
+        cell.textViewAtributo.text = self.tipoServico;
+        
+        }
+    
+        if (indexPath.row == 1)
+        {
+            cell.labelTitle.text = @"Data:";
+            cell.textViewAtributo.text = self.dataServico;
+        
+        }
+    
+        if (indexPath.row == 2)
+        {
+            cell.labelTitle.text = @"Endereço:";
+            cell.textViewAtributo.scrollEnabled = YES;
+            cell.textViewAtributo.text = self.enderecoServico;
+        
+        }
+    
+        if (indexPath.row == 3)
+        {
+            cell.labelTitle.text = @"Cidade:";
+            cell.textViewAtributo.text = self.cidadeServico;
+        
+        }
+    
+        if (indexPath.row == 4)
+        {
+            cell.labelTitle.text = @"Estado:";
+            cell.textViewAtributo.text = self.estadoServico;
+        
+        }
+    
+        return cell;
+
+    } else {
+        self.tableView.rowHeight = 120;
+
+        HOOShowDescricaoTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell2"];
+        cell.label.text = @"Descrição:";
+        cell.textView.scrollEnabled = YES;
+        cell.textView.text = self.descricaoServico;
+
+        return cell;
+    }
+    
+    
+}
+
+
+
+
 
 - (void)alertStatusCadastro:(NSString *)status
 {

@@ -7,8 +7,10 @@
 //
 
 #import "HOODetalhesHistoricoServicoProfissionalViewController.h"
+#import "HOOShowAtributosTVCell.h"
+#import "HOOShowDescricaoTVCell.h"
 
-@interface HOODetalhesHistoricoServicoProfissionalViewController ()
+@interface HOODetalhesHistoricoServicoProfissionalViewController ()<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 @end
 
 @implementation HOODetalhesHistoricoServicoProfissionalViewController
@@ -31,19 +33,91 @@
     PFObject *objectUser =[queryUser getFirstObject];
 
 
-    self.labelTipo.text = object[@"tipo"];
-    self.labelData.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", object[@"dataServico"]]];
-    self.labelEndereco.text = object[@"endereco"];
-    self.labelCidade.text = objectUser[@"cidade"];
-    self.labelEstado.text = objectUser[@"estado"];
-    self.textViewDescricao.text = object[@"descricao"];
+    self.tipoServico = object[@"tipo"];
+    self.cidadeServico = objectUser[@"cidade"];
+    self.estadoServico = objectUser[@"estado"];
+    self.descricaoServico = object[@"descricao"];
+    self.enderecoServico = object[@"endereco"];
+    self.dataServico = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:object[@"dataServico"]];
+
+    
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 0) {
+        return 5;
+    }else{
+        return 1;
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0){
+        self.tableView.rowHeight = 76;
+        HOOShowAtributosTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        cell.textViewAtributo.editable = NO;
+        cell.textViewAtributo.scrollEnabled = NO;
+        
+        if (indexPath.row == 0)
+        {
+            cell.labelTitle.text = @"Tipo:";
+            cell.textViewAtributo.text = self.tipoServico;
+            
+        }
+        
+        if (indexPath.row == 1)
+        {
+            cell.labelTitle.text = @"Data:";
+            cell.textViewAtributo.text = self.dataServico;
+            
+        }
+        
+        if (indexPath.row == 2)
+        {
+            cell.labelTitle.text = @"Endereço:";
+            cell.textViewAtributo.scrollEnabled = YES;
+            cell.textViewAtributo.text = self.enderecoServico;
+            
+        }
+        
+        if (indexPath.row == 3)
+        {
+            cell.labelTitle.text = @"Cidade:";
+            cell.textViewAtributo.text = self.cidadeServico;
+            
+        }
+        
+        if (indexPath.row == 4)
+        {
+            cell.labelTitle.text = @"Estado:";
+            cell.textViewAtributo.text = self.estadoServico;
+            
+        }
+        
+        return cell;
+        
+    } else {
+        self.tableView.rowHeight = 120;
+
+        HOOShowDescricaoTVCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell2"];
+        cell.label.text = @"Descrição:";
+        cell.textView.editable = NO;
+        cell.textView.scrollEnabled = YES;
+        cell.textView.scrollsToTop = YES;
+        cell.textView.text = self.descricaoServico;
+        
+        return cell;
+    }
     
     
 }
 
 
 - (void)initProperties{
-    self.textViewDescricao.editable = NO;
 }
 
 

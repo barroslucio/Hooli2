@@ -12,11 +12,8 @@
 @interface HOOPerfilClienteViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 
-@property (weak, nonatomic) IBOutlet UITextField *tfEmail;
-@property (weak, nonatomic) IBOutlet UITextField *tfEstado;
-@property (weak, nonatomic) IBOutlet UITextField *tfCidade;
-@property (weak, nonatomic) IBOutlet UITextField *tfEndereco;
-@property (weak, nonatomic) IBOutlet UITextField *tfTelefone;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
 //ARRAY DE ESTADOS
