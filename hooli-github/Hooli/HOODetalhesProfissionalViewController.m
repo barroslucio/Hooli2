@@ -7,7 +7,7 @@
 //
 
 #import "HOODetalhesProfissionalViewController.h"
-
+#import "HOOHistoricoClienteViewController.h"
 @interface HOODetalhesProfissionalViewController () <UIActionSheetDelegate>
 {
     PFObject *profissional;
@@ -107,12 +107,23 @@
     
     [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Profissional contratado!"
-                                                                message:@"Obrigado!"
-                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
+           
+            UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Profissional contratado!" message:@"Agora ambos tem acesso ao telefone do outro" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                                 {
+                                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                     HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
+                                     [self presentViewController:viewController animated:YES completion:nil];
+                                     
+                                 }];
+            
+            
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
             } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
+            
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
                                                                 message:@"Tente novamente"
                                                                delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];

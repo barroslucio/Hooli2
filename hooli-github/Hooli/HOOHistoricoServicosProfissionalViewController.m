@@ -98,7 +98,7 @@
         cell.labelPrincipal.text = [object objectForKey:@"tipo"];
         cell.labelData.text = [HOOHistoricoServicosProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", object[@"dataServico"]]]
         ;
-        cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@",[proposta[@"valor"] stringValue]];
+        cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@,00",[proposta[@"valor"] stringValue]];
         
         if ([[object objectForKey:@"tipo"]  isEqual: @"Limpeza"])
         {
@@ -142,7 +142,7 @@
         cell.labelData.text = [HOOHistoricoServicosProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", objectServico[@"dataServico"]]]
 ;
 
-        cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@",[[objectProposta objectForKey:@"valor"] stringValue]];
+        cell.labelSecundario.text = [NSString stringWithFormat:@"R$ %@,00",[[objectProposta objectForKey:@"valor"] stringValue]];
         
         if ([[objectServico objectForKey:@"tipo"]  isEqual: @"Limpeza"])
         {

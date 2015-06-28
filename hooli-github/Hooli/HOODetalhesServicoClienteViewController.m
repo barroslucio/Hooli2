@@ -59,8 +59,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HOOListaPropostasCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellPro"];
-    cell.lbValor.text = [NSString stringWithFormat:@"R$ %@",[[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue]];
-    cell.lbNome.text = [self.arrayListaPro[indexPath.row] objectForKey:@"nomeCompleto"];
+    
+    //REQUISIÇÃO DO PROFISSIONAL RESPONSÁVEL PELA PROPOSTA
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query whereKey:@"objectId" equalTo:[self.arrayListaPro[indexPath.row][@"profissional"] objectId]];
+   
+    //OBJETO DE PROFISSIONAL
+    PFObject *objectProfissional = [query getFirstObject];
+    
+    
+    cell.lbNome.text = [objectProfissional objectForKey:@"nome"];
+    cell.lbValor.text = [NSString stringWithFormat:@"R$ %@,00",[[self.arrayListaPro[indexPath.row] objectForKey:@"valor"] stringValue]];
+
     return cell;
 }
 

@@ -12,14 +12,7 @@
 #import "HOOLoginViewController.h"
 
 
-@interface HOOPerfilClienteViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>{
-    UIFloatLabelTextField *estadoTextField;
-    UIFloatLabelTextField *cidadeTextField;
-    UIFloatLabelTextField *enderecoTextField;
-    UIFloatLabelTextField *dddTextField;
-    UIFloatLabelTextField *telefoneTextField;
-    UIFloatLabelTextField *emailTextField;
-}
+@interface HOOPerfilClienteViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 
 
 @end
@@ -46,114 +39,35 @@
     [self.tfTelefone.layer setCornerRadius:15.0f];
     self.tfEstado.layer.masksToBounds = YES;
        
-    estadoTextField = [UIFloatLabelTextField new];
-    [estadoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    estadoTextField.floatLabelActiveColor = [UIColor orangeColor];
-    estadoTextField.placeholder = @"Estado";
-    // estadoTextField.borderStyle = UITextBorderStyleLine;
-    estadoTextField.delegate = self;
-    [self.tfEstado addSubview:estadoTextField];
+    self.tfEstado.placeholder = @"Estado";
+    self.tfEstado.delegate = self;
+    
+    self.tfEmail.placeholder = @"Email";
+    self.tfEmail.delegate = self;
+
+    self.tfCidade.placeholder = @"Cidade";
+    self.tfCidade.delegate = self;
     
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[estadoTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(estadoTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[estadoTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(estadoTextField)]];
-    
-    emailTextField = [UIFloatLabelTextField new];
-    [emailTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    emailTextField.floatLabelActiveColor = [UIColor orangeColor];
-    emailTextField.placeholder = @"Email";
-    //emailTextField.borderStyle = UITextBorderStyleLine;
-    emailTextField.delegate = self;
-    [self.tfEmail addSubview:emailTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[emailTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(emailTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[emailTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(emailTextField)]];
-    
-        
-    cidadeTextField = [UIFloatLabelTextField new];
-    [cidadeTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    cidadeTextField.floatLabelActiveColor = [UIColor orangeColor];
-    cidadeTextField.placeholder = @"Cidade";
-    //cidadeTextField.borderStyle = UITextBorderStyleNone;
-    cidadeTextField.delegate = self;
-    [self.tfCidade addSubview:cidadeTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[cidadeTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(cidadeTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[cidadeTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(cidadeTextField)]];
     
    
     
-    enderecoTextField = [UIFloatLabelTextField new];
-    [enderecoTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    enderecoTextField.floatLabelActiveColor = [UIColor orangeColor];
-    enderecoTextField.placeholder = @"Endereço";
-    // enderecoTextField.borderStyle = UITextBorderStyleNone;
-    enderecoTextField.delegate = self;
-    [self.tfEndereco  addSubview:enderecoTextField];
+    self.tfEndereco.placeholder = @"Endereço";
+    self.tfEndereco.delegate = self;
     
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[enderecoTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[enderecoTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(enderecoTextField)]];
-    
-    telefoneTextField = [UIFloatLabelTextField new];
-    [telefoneTextField setTranslatesAutoresizingMaskIntoConstraints:NO];
-    telefoneTextField.floatLabelActiveColor = [UIColor orangeColor];
-    telefoneTextField.placeholder = @"Telefone";
-    //telefoneTextField.borderStyle = UITextBorderStyleLine;
-    telefoneTextField.delegate = self;
-    [self.tfTelefone addSubview:telefoneTextField];
-    
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[telefoneTextField]-0-|"
-                                                                      options:NSLayoutFormatAlignAllBaseline
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(telefoneTextField)]];
-    // Vertical
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[telefoneTextField(45)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(telefoneTextField)]];
+    self.tfTelefone.placeholder = @"Telefone";
+    self.tfTelefone.delegate = self;
+
     
     
     
     PFUser *user = [PFUser currentUser];
     
-    enderecoTextField.text = user[@"endereco"];
-    emailTextField.text = user[@"email"];
-    estadoTextField.text = user[@"estado"];
-    cidadeTextField.text = user[@"cidade"];
-    dddTextField.text = [user[@"ddd"] stringValue];
-    telefoneTextField.text = [user[@"telefone"] stringValue];
+    self.tfEndereco.text = user[@"endereco"];
+    self.tfEmail.text = user[@"email"];
+    self.tfEstado.text = user[@"estado"];
+    self.tfCidade.text = user[@"cidade"];
+    self.tfTelefone.text = [user[@"telefone"] stringValue];
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ocultaTeclado:)];
@@ -164,10 +78,16 @@
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
     self.pickerView.showsSelectionIndicator = YES;
-    estadoTextField.inputView = self.pickerView;
+    self.tfEstado.inputView = self.pickerView;
     
-    self.arrayUF = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
+    self.arrayUF = [HOOPerfilClienteViewController arrayUF];
     
+}
+
++ (NSArray *)arrayUF{
+    NSArray* array = @[@"Acre", @"Alagoas", @"Amazonas", @"Amapá", @"Bahia", @"Ceará", @"Distrito Federal", @"Espírito Santo", @"Goiás", @"Maranhão", @"Minas Gerais", @"Mato Grosso do Sul", @"Mato Grosso", @"Pará", @"Paraíba", @"Pernambuco", @"Piauí", @"Paraná", @"Rio de Janeiro", @"Rio Grande do Norte", @"Rondônia", @"Roraima", @"Rio Grande do Sul", @"Santa Catarina", @"Sergipe", @"São Paulo", @"Tocantins"];
+    
+    return array;
 }
 
 - (void)didReceiveMemoryWarning
@@ -188,7 +108,6 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    estadoTextField.text = @"Acre" ;
     return [self.arrayUF objectAtIndex:row];
     
 }
@@ -198,62 +117,49 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    estadoTextField.text=[self.arrayUF objectAtIndex:row];
+    self.tfEstado.text=[self.arrayUF objectAtIndex:row];
 }
 
 
 // procedimento para o teclado ser ocultado
 - (void)ocultaTeclado:(UITapGestureRecognizer *)sender
 {
-    [emailTextField resignFirstResponder];
-    [telefoneTextField resignFirstResponder];
-    [cidadeTextField resignFirstResponder];
-    [estadoTextField resignFirstResponder];
-    [enderecoTextField resignFirstResponder];
-    [dddTextField resignFirstResponder];
-    
+    [self.tfCidade resignFirstResponder];
+    [self.tfEmail resignFirstResponder];
+    [self.tfEndereco resignFirstResponder];
+    [self.tfEstado resignFirstResponder];
+    [self.tfTelefone resignFirstResponder];
+
 }
-
-
-
 
 
 - (void)atualizarDadosCliente{
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
-    NSNumber *telefone = [formatter numberFromString:telefoneTextField.text];
-    NSNumber *ddd = [formatter numberFromString:dddTextField.text];
-    NSNumber *tipo = [NSNumber numberWithInt:0];;
+    NSNumber *telefone = [formatter numberFromString:self.tfTelefone.text];
+    NSNumber *tipo = [NSNumber numberWithInt:0];
     
     PFUser *user = [PFUser currentUser];
     
     
-    user[@"endereco"] = enderecoTextField.text;
-    user[@"email"]=emailTextField.text;
-    user[@"estado"] = estadoTextField.text;
-    user[@"cidade"] = cidadeTextField.text;
-    user[@"ddd"] = ddd;
+    user[@"endereco"] = self.tfEndereco.text;
+    user[@"email"]= self.tfEmail.text;
+    user[@"estado"] = self.tfEstado.text;
+    user[@"cidade"] = self.tfCidade.text;
     user[@"telefone"] = telefone;
     user[@"tipo"] = tipo;
     
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error)
         {   // Hooray! Let them use the app now.
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cadastro bem sucedido"
-                                                                message:@"Obrigado!"
-                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
+            UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Alerta!" andWithMessage:@"Alteração bem sucedida"];
+            [self presentViewController:alert animated:YES completion:nil];
             
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
-            [self presentViewController:viewController animated:YES completion:nil];
             
         } else
         {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                                message:[error.userInfo objectForKey:@"error"]
-                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alertView show];
+            UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Erro!" andWithMessage:@"Tente novamente"];
+            [self presentViewController:alert animated:YES completion:nil];
             
         }
     }];
@@ -263,7 +169,7 @@
 - (IBAction)salvar:(id)sender
 {
     //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
-    if (![dddTextField.text isEqualToString:@""] && ![emailTextField.text isEqualToString:@""]  && ![cidadeTextField.text isEqualToString:@""] && ![estadoTextField.text isEqualToString:@""] && ![telefoneTextField.text isEqualToString:@""] && ![enderecoTextField.text isEqualToString:@""])
+    if (![self.tfEmail.text isEqualToString:@""]  && ![self.tfCidade.text isEqualToString:@""] && ![self.tfEstado.text isEqualToString:@""] && ![self.tfTelefone.text isEqualToString:@""] && ![self.tfEndereco.text isEqualToString:@""])
     {
         //Método para salvar no Parse.com
         [self atualizarDadosCliente];
@@ -271,10 +177,8 @@
     
     else
     {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                            message:@"error"
-                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+        UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Alerta!" andWithMessage:@"Preencha todos os campos"];
+        [self presentViewController:alert animated:YES completion:nil];
 
     }
     

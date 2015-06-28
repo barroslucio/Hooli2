@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imagemTipoServico;
 @property (strong, nonatomic) IBOutlet UILabel *labelTipoServico;
 @property (strong, nonatomic) IBOutlet UILabel *labelDataServico;
+@property (weak, nonatomic) IBOutlet UILabel *labelPropostas;
 
 @end

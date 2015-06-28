@@ -12,7 +12,7 @@
 #import "HOOCadastroProfissionalTVCell.h"
 
 
-@interface HOOCadastroProfissionalViewController() <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>{
+@interface HOOCadastroProfissionalViewController() <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource>{
     UITextField *_textFieldBeingEdited;
     BOOL alvenaria;
     BOOL chaveiro;
@@ -27,9 +27,13 @@
     NSString *cidade;
     NSString *estado;
     NSNumber *telefone;
+    NSString *stringTelefone;
     NSNumber *rg;
+    NSString *stringRG;
     NSNumber *cpf;
+    NSString *stringCPF;
     NSString *nome;
+    
 
 }
 
@@ -38,8 +42,86 @@
 @end
 
 @implementation HOOCadastroProfissionalViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    email = [[NSString alloc] init];
+    senha = [[NSString alloc] init];
+    cidade = [[NSString alloc] init];
+    estado = [[NSString alloc] init];
+    endereco = [[NSString alloc] init];
+    stringTelefone = [[NSString alloc] init];
+    stringCPF = [[NSString alloc] init];
+    stringRG = [[NSString alloc] init];
+    nome = [[NSString alloc] init];
+    
+    alvenaria = NO;
+    hidraulica = NO;
+    pintura = NO;
+    limpeza = NO;
+    eletrica = NO;
+    chaveiro = NO;
+    
+    self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(100, 100, 300, 100)];
+    self.pickerView.dataSource = self;
+    self.pickerView.delegate = self;
+    self.pickerView.showsSelectionIndicator = YES;
+    
+    self.arrayUF = [HOOPerfilClienteViewController arrayUF];
+
+}
+
+//PIKER VIEW - ESTADOS
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [self.arrayUF count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    return [self.arrayUF objectAtIndex:row];
+    
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    estado =[self.arrayUF objectAtIndex:row];
+    [self.tableView reloadData];
+}
+//--pikerview
+
+
 - (IBAction)salvar:(id)sender {
-    [self cadastraProfissional];
+    //VERIFICA SE AS TEXTFILDS ESTÃO TODAS PREENCHIDAS
+     if (![email isEqualToString:@""] && ![senha isEqualToString:@""] && ![cidade isEqualToString:@""]  && ![estado isEqualToString:@""] && ![endereco isEqualToString:@""] && ![stringTelefone isEqualToString:@""] && ![stringRG isEqualToString:@""] && ![stringCPF isEqualToString:@""] && ![nome isEqualToString:@""])
+     {
+         //VERIFICA SE ALGUMA PROFISSÃO FOI MARCADA
+         if (alvenaria || chaveiro || eletrica || hidraulica || limpeza || pintura) {
+             //Método para salvar no Parse.com
+             [self cadastraProfissional];
+
+         } else {
+             UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Alerta!" andWithMessage:@"Selecione pelo menos um tipo se serviço"];
+             [self presentViewController:alert animated:YES completion:nil];
+
+         }
+         
+     }
+     
+     else
+     {
+         UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Alerta!" andWithMessage:@"Preencha todos os campos"];
+         [self presentViewController:alert animated:YES completion:nil];
+         
+     }
 }
 
 -(void)textFieldDidBeginEditing:(nonnull UITextField *)textField{
@@ -83,6 +165,9 @@
         {
             cell.label.text = @"Estado";
             cell.textField.placeholder = @"Amazonas";
+            cell.textField.text = estado;
+            cell.textField.inputView = self.pickerView;
+
             
         }
         
@@ -189,15 +274,20 @@
     if (indexPath.row == 6){
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
-        telefone = [f numberFromString:textField.text];    }
+        telefone = [f numberFromString:textField.text];
+        stringTelefone = textField.text;
+    }
     if (indexPath.row == 7){
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
-        rg = [f numberFromString:textField.text];    }
+        rg = [f numberFromString:textField.text];
+        stringRG = textField.text;
+    }
     if (indexPath.row == 8){
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
         cpf = [f numberFromString:textField.text];
+        stringCPF = textField.text;
     }
 
     _textFieldBeingEdited = nil;
@@ -258,6 +348,8 @@
     user.password = senha;
     user.email = email;
     
+    user[@"tipo"] = [NSNumber numberWithInt:1];
+
     user[@"nome"] = nome;
     user[@"telefone"] = telefone;
     user[@"endereco"] = endereco;
@@ -276,24 +368,34 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error)
         {   // Hooray! Let them use the app now.
+            UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Cadastro bem sucedido!" message:@"Agora você pode enviar propostas para os serviços disponíveis" preferredStyle:UIAlertControllerStyleAlert];
             
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                                 {
+                                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                     HOOServicosDisponiveisViewController *viewController = (HOOServicosDisponiveisViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Pro"];
+                                     [self presentViewController:viewController animated:YES completion:nil];
+                                     
+                                     
+                                 }];
+            
+            
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+
         }
         else
-        {   NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+        {
+            NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+            
+            UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Erro!" andWithMessage:@"Verifique sua conexão com a Internet \nVerifique se seu e-mail é válido/nTente novamente"];
+            [self presentViewController:alert animated:YES completion:nil];
+
         }
     }];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    alvenaria = NO;
-    hidraulica = NO;
-    pintura = NO;
-    limpeza = NO;
-    eletrica = NO;
-    chaveiro = NO;
-}
 
 - (void)didReceiveMemoryWarning
 {

@@ -59,8 +59,28 @@
 //TABLE VIEW
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSArray *arrayServicos;
+    NSArray *countPropostas;
     if (type == 0) {
         arrayServicos = self.arrayServicosPendentes;
+
+        PFQuery *query = [PFQuery queryWithClassName:@"Servico"];
+        [query whereKey:@"objectId" equalTo:[self.arrayServicosPendentes[indexPath.row] objectId]];
+        PFObject *objectServico =[query getFirstObject];
+        
+        PFQuery *propostasFeitas = [PFQuery queryWithClassName:@"Proposta"];
+        NSArray *propostas = [propostasFeitas findObjects];
+        NSMutableArray *servicesToFilter = [@[] mutableCopy];
+        for (NSDictionary *object in propostas) {
+            
+            PFObject *servico = (PFObject *) object[@"servico"];
+            if([[objectServico objectId] isEqual:[servico objectId]])
+            {
+                [servicesToFilter addObject:object];
+            }
+        }
+        
+        countPropostas = servicesToFilter;
+        
     } else {
         arrayServicos = self.arrayServicosEscolhidos;
 
@@ -91,7 +111,24 @@
     {
         cell.imagemTipoServico.image = [UIImage imageNamed:@"eletricaIcon"];
     }
+    
+    if (type == 0) {
+        cell.labelPropostas.text = [NSString stringWithFormat:@"Propostas: %ld", countPropostas.count];
+    }else {
+        
+        PFQuery *propostasFeitas = [PFQuery queryWithClassName:@"Proposta"];
+        
+        [propostasFeitas whereKey:@"servico" equalTo:arrayServicos[indexPath.row]];
+        
+        PFObject *proposta = [propostasFeitas getFirstObject];
+        if (proposta) {
+            cell.labelPropostas.text = [NSString stringWithFormat:@"Preço: R$ %@,00",[[proposta objectForKey:@"valor"] stringValue]];
+        }else{
+            cell.labelPropostas.text = [NSString stringWithFormat:@"%@",[arrayServicos[indexPath.row] objectId]];
 
+        }
+
+    }
     cell.labelTipoServico.text = [arrayServicos[indexPath.row] objectForKey:@"tipo"];
     cell.labelDataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[arrayServicos[indexPath.row] objectForKey:@"dataServico"]];
     return cell;

@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "UIFloatLabelTextField.h"
-
+#import "HOOAlertControllerStyle.h"
 @interface HOOAgendaMesmoEnderecoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *servico;
 @property (strong, nonatomic) IBOutlet UITextField *textFieldData;

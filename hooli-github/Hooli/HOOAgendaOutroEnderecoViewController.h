@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "UIFloatLabelTextField.h"
+#import "HOOAlertControllerStyle.h"
 
 @interface HOOAgendaOutroEnderecoViewController : UIViewController
 

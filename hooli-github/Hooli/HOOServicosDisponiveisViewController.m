@@ -43,17 +43,13 @@
     
     PFUser *user = [PFUser currentUser];
     
-   
-   
-
-    
-  
     
     PFQuery *propostasFeitas = [PFQuery queryWithClassName:@"Proposta"];
     [propostasFeitas whereKey:@"profissional" equalTo:[PFUser currentUser]];
     self.arrayPropostas = [propostasFeitas findObjects];
-    
+
     PFQuery *servicosDisponiveis = [PFQuery queryWithClassName:@"Servico"];
+    
     NSMutableArray *servicesToFilter = [@[] mutableCopy];
             for (NSDictionary *object in self.arrayPropostas) {
                 PFObject *servico = (PFObject *) object[@"servico"];

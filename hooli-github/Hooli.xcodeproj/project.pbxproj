@@ -12,6 +12,7 @@
 		243CC9171B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */; };
 		246A56751B263CB3007044A7 /* HOOCadastroProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56741B263CB3007044A7 /* HOOCadastroProfissionalViewController.m */; };
 		246A56841B29BBF2007044A7 /* HOOHistoricoClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */; };
+		248007821B3F2C9F00B0C093 /* HOOAlertControllerStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 248007811B3F2C9F00B0C093 /* HOOAlertControllerStyle.m */; };
 		248179551B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248179541B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m */; };
 		248179581B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248179571B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m */; };
 		771D73FA1B36FDD500074894 /* HOOHistoricoClienteTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 771D73F91B36FDD500074894 /* HOOHistoricoClienteTVCell.m */; };
@@ -88,6 +89,8 @@
 		246A56741B263CB3007044A7 /* HOOCadastroProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOCadastroProfissionalViewController.m; sourceTree = "<group>"; };
 		246A56821B29BBF2007044A7 /* HOOHistoricoClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HOOHistoricoClienteViewController.h; path = ../HOOHistoricoClienteViewController.h; sourceTree = "<group>"; };
 		246A56831B29BBF2007044A7 /* HOOHistoricoClienteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HOOHistoricoClienteViewController.m; path = ../HOOHistoricoClienteViewController.m; sourceTree = "<group>"; };
+		248007801B3F2C9F00B0C093 /* HOOAlertControllerStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOAlertControllerStyle.h; sourceTree = "<group>"; };
+		248007811B3F2C9F00B0C093 /* HOOAlertControllerStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOAlertControllerStyle.m; sourceTree = "<group>"; };
 		248179531B3A079C00143D7E /* HOOInformacoesProfissionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOInformacoesProfissionalViewController.h; sourceTree = "<group>"; };
 		248179541B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOOInformacoesProfissionalViewController.m; sourceTree = "<group>"; };
 		248179561B3A6D4F00143D7E /* HOOInformacoesClienteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOOInformacoesClienteViewController.h; sourceTree = "<group>"; };
@@ -191,7 +194,6 @@
 		243CC9071B2CD98500ACF9F3 /* Módulo usuário/cliente */ = {
 			isa = PBXGroup;
 			children = (
-				79BBC3721B3071FF00445A87 /* CustonCell */,
 				79A1977C1B2724CA009A3152 /* HOOCadastroClienteViewController.h */,
 				79A1977D1B2724CA009A3152 /* HOOCadastroClienteViewController.m */,
 				79A1977F1B29BD90009A3152 /* HOOPerfilClienteViewController.h */,
@@ -210,6 +212,7 @@
 				79BBC3771B31CE6B00445A87 /* HOODetalhesProfissionalViewController.m */,
 				248179531B3A079C00143D7E /* HOOInformacoesProfissionalViewController.h */,
 				248179541B3A079C00143D7E /* HOOInformacoesProfissionalViewController.m */,
+				79BBC3721B3071FF00445A87 /* CustonCellCliente */,
 			);
 			name = "Módulo usuário/cliente";
 			sourceTree = "<group>";
@@ -217,28 +220,36 @@
 		243CC9081B2CD99800ACF9F3 /* Módulo profissional */ = {
 			isa = PBXGroup;
 			children = (
-				77A25D721B3C89EF00282AA6 /* HOOCadastroProfissionalTVCell.h */,
-				77A25D731B3C89EF00282AA6 /* HOOCadastroProfissionalTVCell.m */,
-				79BBC36F1B2FABFC00445A87 /* HOOPerfilProfissionalViewController.h */,
-				79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */,
 				246A56731B263CB3007044A7 /* HOOCadastroProfissionalViewController.h */,
 				246A56741B263CB3007044A7 /* HOOCadastroProfissionalViewController.m */,
+				79BBC36F1B2FABFC00445A87 /* HOOPerfilProfissionalViewController.h */,
+				79BBC3701B2FABFC00445A87 /* HOOPerfilProfissionalViewController.m */,
 				772FDAAC1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.h */,
 				772FDAAD1B2F087100EE5C37 /* HOOServicosDisponiveisViewController.m */,
-				772FDAAF1B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.h */,
-				772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */,
 				772FDAB21B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.h */,
 				772FDAB31B2F18A200EE5C37 /* HOODetalhesServicosDisponiveisViewController.m */,
-				775646FC1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.h */,
-				775646FD1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m */,
 				243CC9121B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.h */,
 				243CC9131B2F6EC500ACF9F3 /* HOOHistoricoServicosProfissionalViewController.m */,
 				243CC9151B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.h */,
 				243CC9161B2F70C500ACF9F3 /* HOODetalhesHistoricoServicoProfissionalViewController.m */,
 				248179561B3A6D4F00143D7E /* HOOInformacoesClienteViewController.h */,
 				248179571B3A6D4F00143D7E /* HOOInformacoesClienteViewController.m */,
+				248007831B3F78CC00B0C093 /* CustomCellProfissional */,
 			);
 			name = "Módulo profissional";
+			sourceTree = "<group>";
+		};
+		248007831B3F78CC00B0C093 /* CustomCellProfissional */ = {
+			isa = PBXGroup;
+			children = (
+				77A25D721B3C89EF00282AA6 /* HOOCadastroProfissionalTVCell.h */,
+				77A25D731B3C89EF00282AA6 /* HOOCadastroProfissionalTVCell.m */,
+				772FDAAF1B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.h */,
+				772FDAB01B2F131200EE5C37 /* HOOServicosDisponiveisTVCell.m */,
+				775646FC1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.h */,
+				775646FD1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m */,
+			);
+			name = CustomCellProfissional;
 			sourceTree = "<group>";
 		};
 		77A88AC21B25E38C002BD992 = {
@@ -264,6 +275,8 @@
 			children = (
 				77A88AD21B25E38C002BD992 /* AppDelegate.h */,
 				77A88AD31B25E38C002BD992 /* AppDelegate.m */,
+				248007801B3F2C9F00B0C093 /* HOOAlertControllerStyle.h */,
+				248007811B3F2C9F00B0C093 /* HOOAlertControllerStyle.m */,
 				77A88AD51B25E38C002BD992 /* HOOLoginViewController.h */,
 				77A88AD61B25E38C002BD992 /* HOOLoginViewController.m */,
 				77EE11E41B3362E200262F0E /* HOOEscolhaCadastroViewController.h */,
@@ -320,7 +333,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		79BBC3721B3071FF00445A87 /* CustonCell */ = {
+		79BBC3721B3071FF00445A87 /* CustonCellCliente */ = {
 			isa = PBXGroup;
 			children = (
 				77A25D6F1B3C51A700282AA6 /* HOOCadastroClienteTVCell.h */,
@@ -332,7 +345,7 @@
 				77EF52991B34FCD60041F579 /* HOOAgendarServicoTVCell.h */,
 				77EF529A1B34FCD60041F579 /* HOOAgendarServicoTVCell.m */,
 			);
-			name = CustonCell;
+			name = CustonCellCliente;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +472,7 @@
 				77EE11E61B3362E200262F0E /* HOOEscolhaCadastroViewController.m in Sources */,
 				77EF529B1B34FCD60041F579 /* HOOAgendarServicoTVCell.m in Sources */,
 				77AE668A1B2A170E008231BA /* HOOAgendaMesmoEnderecoViewController.m in Sources */,
+				248007821B3F2C9F00B0C093 /* HOOAlertControllerStyle.m in Sources */,
 				775646FE1B39ADA50020D6B9 /* HOOHistoricoServicoProfissionalTVCell.m in Sources */,
 				79A197811B29BD90009A3152 /* HOOPerfilClienteViewController.m in Sources */,
 				77A88AD11B25E38C002BD992 /* main.m in Sources */,

@@ -9,10 +9,6 @@
 #import "HOODetalhesHistoricoServicoProfissionalViewController.h"
 
 @interface HOODetalhesHistoricoServicoProfissionalViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *labelTipo;
-
-@property (weak, nonatomic) IBOutlet UILabel *labelData;
-@property (weak, nonatomic) IBOutlet UITextView *textViewDescricao;
 @end
 
 @implementation HOODetalhesHistoricoServicoProfissionalViewController
@@ -28,9 +24,18 @@
     [query whereKey:@"objectId" equalTo:self.idServico];
     PFObject *object =[query getFirstObject];
     
+    PFObject *user = (PFObject *)object[@"User"];
+    
+    PFQuery *queryUser = [PFQuery queryWithClassName:@"_User"];
+    [queryUser whereKey:@"objectId" equalTo:[user objectId]];
+    PFObject *objectUser =[queryUser getFirstObject];
+
 
     self.labelTipo.text = object[@"tipo"];
     self.labelData.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:[NSString stringWithFormat: @"%@", object[@"dataServico"]]];
+    self.labelEndereco.text = object[@"endereco"];
+    self.labelCidade.text = objectUser[@"cidade"];
+    self.labelEstado.text = objectUser[@"estado"];
     self.textViewDescricao.text = object[@"descricao"];
     
     

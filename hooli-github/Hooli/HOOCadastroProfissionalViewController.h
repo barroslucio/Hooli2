@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "HOOAlertControllerStyle.h"
+#import "HOOServicosDisponiveisViewController.h"
+#import "HOOPerfilClienteViewController.h"
 
 @interface HOOCadastroProfissionalViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+//ARRAY DE ESTADOS
+@property (nonatomic) NSArray* arrayUF;
+
+//PIKER VIEW
+@property (retain, nonatomic)  UIPickerView *pickerView;
+
 
 @end

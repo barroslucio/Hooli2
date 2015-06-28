@@ -31,9 +31,19 @@
 
 - (void)initProperties
 {
+    PFObject *user = (PFObject *)self.servico[@"User"];
+    
+    PFQuery *queryUser = [PFQuery queryWithClassName:@"_User"];
+    [queryUser whereKey:@"objectId" equalTo:[user objectId]];
+    PFObject *objectUser =[queryUser getFirstObject];
+    self.labelCidade.text = objectUser[@"cidade"];
+    self.labelEstado.text = objectUser[@"estado"];
+
+    
     self.tipoServico.text = self.servico[@"tipo"];
     self.dataServico.text = [HOODetalhesHistoricoServicoProfissionalViewController dateFormatter:self.servico[@"dataServico"]];
     self.descricaoServico.text = self.servico[@"descricao"];
+    self.enderecoServico.text = self.servico[@"endereco"];
     self.descricaoServico.editable = NO;
     self.valorTextField.placeholder = @"Preço do Serviço";
     self.valorTextField.delegate = self;

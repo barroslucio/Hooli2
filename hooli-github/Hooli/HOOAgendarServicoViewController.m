@@ -143,36 +143,52 @@
 }
 
 -(void)alerta{
-
-    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"O serviço vai ser feito no seu endereço cadastrado ou em outro lugar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
-                            @"No mesmo endereço",
-                            @"Em outro lugar",
-                            nil];
-    popup.tag = 1;
-    [popup showInView:[UIApplication sharedApplication].keyWindow];
-}
-
-- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    switch (popup.tag) {
-        case 1: {
-            switch (buttonIndex) {
-                case 0:
-                    [self performSegueWithIdentifier:@"mesmoEndereco" sender:self];
-                    break;
-                case 1:
-                    [self performSegueWithIdentifier:@"outroEndereco" sender:self];
-                    break;
-                default:
-                    break;
-            }
-            break;
-        }
-        default:
-            break;
-    }
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"O serviço vai ser feito no seu endereço cadastrado ou em outro lugar?"
+                                  message:nil
+                                  preferredStyle:UIAlertControllerStyleActionSheet];
     
-}
+    
+    
+    UIAlertAction* mesmoEndereco = [UIAlertAction actionWithTitle:@"No mesmo endereço"
+                                            style:UIAlertActionStyleDefault
+                                            handler:^(UIAlertAction * action)
+    {
+        
+        [self performSegueWithIdentifier:@"mesmoEndereco" sender:self];
+                             
+    }];
+    
+    
+    
+    UIAlertAction* outroEndereco = [UIAlertAction actionWithTitle:@"Em outro endereço"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+    {
+        
+        [self performSegueWithIdentifier:@"outroEndereco" sender:self];
+        
+    }];
+    
+    
+    
+    UIAlertAction* cancelar = [UIAlertAction actionWithTitle:@"Cancelar"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action)
+    {
+                                        
+        [self dismissViewControllerAnimated:alert completion:nil];
+        
+    }];
+    
+    
+    [alert addAction:mesmoEndereco];
+    [alert addAction:outroEndereco];
+    [alert addAction:cancelar];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 
+}
 
 @end

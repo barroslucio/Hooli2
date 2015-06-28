@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "UIFloatLabelTextField.h"
-
+#import "HOOAlertControllerStyle.h"
 @interface HOOPerfilClienteViewController : UIViewController <UIViewControllerTransitioningDelegate>
 
 
@@ -27,5 +26,7 @@
 @property (retain, nonatomic)  UIPickerView *pickerView;
 
 - (IBAction)salvar:(id)sender;
+
++ (NSArray *)arrayUF;
 
 @end

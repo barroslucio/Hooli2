@@ -141,38 +141,33 @@
         
         [servico saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Agendamento bem sucedido"
-                                                                    message:@"Obrigado!"
-                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
-                [self combina];
-                [self segueViewController];
+                UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Agendamento bem sucedido!" message:@"Aguarde as propostas dos profissionais" preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                                     {
+                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                         
+                                     }];
+                
+                
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
             } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
-                                                                    message:@"Tente novamente"
-                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];        }
+                UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Erro!" andWithMessage:@"Tente novamente"];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         }];
         
     }
     else
     {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Erro"
-                                                            message:@"Preencha todos os campos!"
-                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+        UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Alerta!" andWithMessage:@"Preencha todos os campos"];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     
     
     
-}
-
-
-- (void)segueViewController{
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    HOOHistoricoClienteViewController *viewController = (HOOHistoricoClienteViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HistoricoCliente"];
-//    [self presentViewController:viewController animated:YES completion:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
