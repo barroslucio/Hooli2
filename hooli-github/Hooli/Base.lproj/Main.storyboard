@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -1116,12 +1116,13 @@
                     <tabBarItem key="tabBarItem" title="Serviços disponíveis" id="how-kv-AA9"/>
                     <navigationItem key="navigationItem" title="Serviços Disponíveis" id="mmA-oJ-Rmw">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="2x1-zF-kcg">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.12156863510608673" green="0.49411767721176147" blue="0.16862745583057404" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="logout:" destination="nGh-rb-Ocm" id="Lwi-py-cCZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableview" destination="FxH-fC-Jzs" id="fgz-41-dyC"/>
@@ -1254,6 +1255,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="Pro" title="Módulo Profissional" id="12w-Lm-h68" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="btg-ih-3mP"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pC5-So-IPG">
@@ -1390,6 +1392,7 @@
             <objects>
                 <navigationController id="dRb-kX-67w" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Serviços disponíveis" id="b8B-02-cjs"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bvd-hJ-3uU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1739,6 +1742,7 @@
             <objects>
                 <navigationController id="77k-IZ-KjZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Histórico de Serviço" id="3GY-Wx-wvl"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GDu-Pq-dFD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1856,6 +1860,7 @@
             <objects>
                 <navigationController id="vUD-q1-o8j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Perfil" id="Co0-PC-GOO"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A0Z-pg-9gO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

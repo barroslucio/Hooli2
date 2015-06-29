@@ -178,7 +178,7 @@
                                                           handler:^(UIAlertAction * action)
     {
                                         
-        [self dismissViewControllerAnimated:alert completion:nil];
+//        [self dismissViewControllerAnimated:alert completion:nil];
         
     }];
     

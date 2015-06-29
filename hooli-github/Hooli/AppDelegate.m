@@ -40,6 +40,7 @@
             self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Pro"];
         }
     }
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setTabBarAppearance];
 
 
@@ -47,12 +48,21 @@
     return YES;
 }
 - (void)setTabBarAppearance {
-    [[UITabBar appearance] setBarTintColor:[UIColor grayColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     [[UITabBar appearance] setTranslucent:NO];
 
     [[UINavigationBar appearance] setBarTintColor:[UIColor grayColor]];
-    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor blackColor];
+    shadow.shadowOffset = CGSizeMake(1, 0);
+    
+    NSDictionary *titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor greenColor],
+                                          NSShadowAttributeName:shadow};
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:titleTextAttributes];
+    
+
 
 }
 
