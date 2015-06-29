@@ -23,6 +23,5 @@
 @property(nonatomic) NSString *idServico;
 
 - (IBAction)confirmar:(id)sender;
-- (IBAction)voltar:(id)sender;
 
 @end

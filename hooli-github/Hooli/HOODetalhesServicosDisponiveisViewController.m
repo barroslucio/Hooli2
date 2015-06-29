@@ -137,9 +137,9 @@
 
 - (void)alertStatusCadastro:(NSString *)status
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alerta!" message:status delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    
+    UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Alerta!" andWithMessage:status];
+    [self presentViewController:alert animated:YES completion:nil];
+
     NSLog(@"Cadastro do Profissional recuzado");
     
 }
@@ -164,20 +164,24 @@
             [self initProperties];
             if(succeeded)
             {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Proposta realizada com sucesso!"
-                                                                    message:@"Obrigado!"
-                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
+                UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Proposta realizada com sucesso!" message:@"Obrigado!" preferredStyle:UIAlertControllerStyleAlert];
                 
-                [self dismissViewControllerAnimated:YES completion:nil];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                                     {
+                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                         [self.navigationController popToRootViewControllerAnimated:YES];
+                                         
+                                     }];
+                
+                
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
 
             }
             else
             {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                                    message:[error.userInfo objectForKey:@"error"]
-                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
+                UIAlertController *alert = [HOOAlertControllerStyle styleSimpleWithTitle:@"Erro!" andWithMessage:@"Verifique sua conexão com a Internet \nVerifique se seu e-mail é válido/nTente novamente"];
+                [self presentViewController:alert animated:YES completion:nil];
 
             }
         }];
@@ -189,10 +193,5 @@
     }
 }
 
-
-- (IBAction)voltar:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-}
 
 @end

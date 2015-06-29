@@ -40,10 +40,20 @@
             self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Pro"];
         }
     }
+    [self setTabBarAppearance];
+
     
   
     return YES;
 }
+- (void)setTabBarAppearance {
+    [[UITabBar appearance] setBarTintColor:[UIColor lightGrayColor]];
+//    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+//    [[UITabBar appearance] setTranslucent:NO];
+
+    [[UINavigationBar appearance] setBarTintColor:[UIColor lightGrayColor]];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -146,7 +146,7 @@
                 UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                      {
                                          [self dismissViewControllerAnimated:YES completion:nil];
-                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                         [self.navigationController popToRootViewControllerAnimated:YES];
                                          
                                      }];
                 

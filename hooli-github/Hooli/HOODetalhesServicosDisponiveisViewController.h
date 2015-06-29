@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "UIFloatLabelTextField.h"
+#import "HOOAlertControllerStyle.h"
 
 @interface HOODetalhesServicosDisponiveisViewController : UIViewController
 
@@ -25,6 +25,5 @@
 @property (strong, nonatomic) IBOutlet UITextField *valorTextField;
 @property (weak, nonatomic) IBOutlet UIView *subviewValor;
 - (IBAction)enviarProposta:(id)sender;
-- (IBAction)voltar:(id)sender;
 
 @end

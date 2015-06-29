@@ -31,7 +31,6 @@
     self.lbEndereco.text = [objectUser objectForKey:@"endereco"];
     self.lbCidade.text = [objectUser objectForKey:@"cidade"];
     self.lbEstado.text = [objectUser objectForKey:@"estado"];
-    self.lbDDD.text = [[objectUser objectForKey:@"ddd"] stringValue];
     self.lbTelefone.text = [[objectUser objectForKey:@"telefone"] stringValue];
     
 
@@ -53,7 +52,4 @@
 }
 */
 
-- (IBAction)voltar:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

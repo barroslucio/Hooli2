@@ -23,6 +23,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 + (NSString *)dateFormatter:(NSString *)data;
-- (IBAction)voltar:(id)sender;
 
 @end

@@ -5,9 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Light</string>
             <string>HelveticaNeue-Light</string>
@@ -271,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUn-1e-pcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941.5" y="1206.5"/>
+            <point key="canvasLocation" x="826.5" y="1254.5"/>
         </scene>
         <!--Cadastro Profissional View Controller-->
         <scene sceneID="IHP-dy-CKp">
@@ -386,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmO-qZ-xsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917.5" y="-675.5"/>
+            <point key="canvasLocation" x="826.5" y="-939.5"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="cou-R9-fUZ">
@@ -400,31 +397,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eu0-Py-NWa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.21209929699999999" green="0.2271524687" blue="0.40572644559999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Perfil" id="aqa-RF-TEm">
-                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="07o-cJ-xj8">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dve-Vv-w8e">
-                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Salvar">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="salvar:" destination="nOS-4P-wca" eventType="touchUpInside" id="RlQ-WP-sxq"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MZe-Kc-73H">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="mxs-xJ-Aay" customClass="HOOCadastroClienteTVCell">
@@ -466,13 +440,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Eu0-Py-NWa" firstAttribute="leading" secondItem="vpP-f7-4ny" secondAttribute="leadingMargin" constant="-16" id="22h-4n-SqU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Eu0-Py-NWa" secondAttribute="trailing" constant="-16" id="6J7-8s-xMG"/>
-                            <constraint firstItem="Eu0-Py-NWa" firstAttribute="top" secondItem="iCc-Zs-A0s" secondAttribute="bottom" id="YjU-vh-EPU"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" id="FQ0-cl-X4P"/>
+                    <navigationItem key="navigationItem" title="Perfil" id="32O-Vk-Sz2">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="Z0j-1G-JPh">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="salvar:" destination="nOS-4P-wca" id="AOx-ru-B8J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="MZe-Kc-73H" id="t8K-rf-bK2"/>
@@ -480,7 +457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPl-Yu-GPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544.5" y="2670.5"/>
+            <point key="canvasLocation" x="2378.5" y="2129.5"/>
         </scene>
         <!--Histórico-->
         <scene sceneID="Fvp-c6-BkG">
@@ -494,20 +471,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUx-WR-czl">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.2666666667" green="0.2901960784" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Histórico" id="akv-Xd-fdc"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hkg-jF-R7h">
-                                <rect key="frame" x="0.0" y="104" width="375" height="514"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -556,7 +521,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="b4g-qh-g1G">
-                                <rect key="frame" x="66" y="68" width="242" height="29"/>
+                                <rect key="frame" x="66" y="209" width="242" height="29"/>
                                 <segments>
                                     <segment title="Propostas"/>
                                     <segment title="Contratados"/>
@@ -567,20 +532,21 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.2666666667" green="0.2901960784" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" id="yMF-hN-ghY"/>
+                    <navigationItem key="navigationItem" title="Histórico" id="QWs-Hf-353"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="segmentedControl" destination="b4g-qh-g1G" id="6XF-Wc-jwC"/>
                         <outlet property="tableView" destination="Hkg-jF-R7h" id="sL3-Hv-o3Y"/>
-                        <segue destination="yAb-8t-rgD" kind="show" identifier="detalheProfissionalEscolhido" id="rPl-ZP-O33"/>
-                        <segue destination="ZoW-Yp-jSD" kind="show" identifier="detalheHistoricoServico" id="XzK-Bo-sdo"/>
+                        <segue destination="ZoW-Yp-jSD" kind="push" identifier="detalheHistoricoServico" id="ydT-f2-vu6"/>
+                        <segue destination="yAb-8t-rgD" kind="push" identifier="detalheProfissionalEscolhido" id="x4u-Id-LZw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qI9-yP-mhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2182.5" y="1919.5"/>
+            <point key="canvasLocation" x="2907.5" y="1283.5"/>
         </scene>
         <!--detalhe servico (fechado CLIENTE)-->
         <scene sceneID="Mz7-za-iFX">
@@ -594,25 +560,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNS-Yl-fCr">
-                                <rect key="frame" x="0.0" y="23" width="375" height="44"/>
-                                <color key="barTintColor" red="0.21209929699999999" green="0.2271524687" blue="0.40572644559999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Informações do profissional" id="H4a-hd-7WL">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="f8L-f6-i7V">
-                                            <connections>
-                                                <action selector="voltar:" destination="yAb-8t-rgD" id="SS6-wO-izw"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hSV-dh-7bI">
-                                <rect key="frame" x="0.0" y="72" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQ6-oe-D6K">
                                         <rect key="frame" x="-1" y="0.0" width="75" height="75"/>
@@ -634,7 +583,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgJ-ea-fbP">
-                                <rect key="frame" x="0.0" y="148" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TVY-JB-CB9">
                                         <rect key="frame" x="-1" y="0.0" width="75" height="75"/>
@@ -656,7 +605,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L5g-vs-0L5">
-                                <rect key="frame" x="0.0" y="224" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="216" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YN5-kJ-AeI">
                                         <rect key="frame" x="-1" y="0.0" width="75" height="75"/>
@@ -678,7 +627,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-Hq-BDB">
-                                <rect key="frame" x="0.0" y="300" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="292" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0W-sl-cqR">
                                         <rect key="frame" x="-1" y="0.0" width="75" height="75"/>
@@ -700,7 +649,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-94-UuP">
-                                <rect key="frame" x="0.0" y="376" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="368" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-Ka-oeB">
                                         <rect key="frame" x="-1" y="0.0" width="75" height="75"/>
@@ -722,7 +671,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x1W-oU-kAX">
-                                <rect key="frame" x="0.0" y="452" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="444" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOv-5q-WOn">
                                         <rect key="frame" x="-1" y="0.0" width="75" height="75"/>
@@ -746,6 +695,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Informações do profissional" id="dTQ-v2-mIZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="lbCidade" destination="Hi4-6V-yeT" id="UE8-dU-nwm"/>
@@ -758,7 +708,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXV-sC-iIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199.5" y="2701.5"/>
+            <point key="canvasLocation" x="2907.5" y="2129.5"/>
+        </scene>
+        <!--Histórico-->
+        <scene sceneID="3V0-qU-Zh8">
+            <objects>
+                <navigationController id="14S-TE-0HJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Histórico" id="Sb6-OW-j9p"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lo7-SW-aNV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="N2A-yM-mT7" kind="relationship" relationship="rootViewController" id="FrK-3B-vG8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z4T-ia-daL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2411.5" y="1283.5"/>
         </scene>
         <!--Agendar-->
         <scene sceneID="faM-Cb-0ho">
@@ -772,30 +740,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOc-m6-pcG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.21209929699999999" green="0.2271524687" blue="0.40572644559999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Agendar serviço" id="2rG-Zj-A71">
-                                        <barButtonItem key="rightBarButtonItem" id="282-Ay-aeN">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jV8-KP-iXu">
-                                                <rect key="frame" x="310" y="7" width="49" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                <state key="normal" title="Logout"/>
-                                                <connections>
-                                                    <action selector="logout:" destination="h4C-eR-oSt" eventType="touchUpInside" id="qjh-Xh-W3l"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IR6-yW-2ij">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="140" id="vhI-GD-QYz" customClass="HOOAgendarServicoTVCell">
@@ -833,15 +779,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Agendar" id="jCh-p6-1Yd"/>
+                    <navigationItem key="navigationItem" title="Agendar" id="SXS-Ny-BeT">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="cbS-09-u3i">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logout:" destination="h4C-eR-oSt" id="h9Z-bL-cIj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="bhD-7x-8tV" kind="show" identifier="outroEndereco" id="5Mx-jP-aDd"/>
-                        <segue destination="boi-27-8xf" kind="show" identifier="mesmoEndereco" id="mXS-51-ypX"/>
+                        <segue destination="bhD-7x-8tV" kind="push" identifier="outroEndereco" id="Fne-ff-O6a"/>
+                        <segue destination="boi-27-8xf" kind="push" identifier="mesmoEndereco" id="Ema-0Y-zNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AC-dL-S6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161.5" y="1018.5"/>
+            <point key="canvasLocation" x="2411.5" y="452.5"/>
         </scene>
         <!--Histórico de serviço-->
         <scene sceneID="g8P-xF-pxl">
@@ -855,19 +809,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-7M-xmH">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <color key="barTintColor" red="0.25882352939999997" green="0.2784313725" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Histórico de Serviços" id="4k0-C2-KWo"/>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3u-q1-mPv">
-                                <rect key="frame" x="0.0" y="67" width="375" height="38"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="38"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="v35-hp-o2b">
                                         <rect key="frame" x="63" y="5" width="248" height="29"/>
@@ -885,7 +828,7 @@
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.2784313725" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4oL-h2-iVQ">
-                                <rect key="frame" x="0.0" y="106" width="375" height="512"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="575"/>
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.30980392159999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Lj3-Y5-NpV" customClass="HOOHistoricoServicoProfissionalTVCell">
@@ -930,17 +873,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Histórico" id="vMn-RZ-lgh"/>
+                    <navigationItem key="navigationItem" title="Hitórico de Serviços" id="8T7-Sv-3AO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="segmentedControl" destination="v35-hp-o2b" id="h2C-y4-xIf"/>
                         <outlet property="tableView" destination="4oL-h2-iVQ" id="WL6-Sa-gYc"/>
-                        <segue destination="VPx-Kg-xcN" kind="show" identifier="detalhesCliente" id="9jC-Dz-zjV"/>
-                        <segue destination="K4s-8M-QYV" kind="show" identifier="detalhesServico" id="UnC-9w-cDD"/>
+                        <segue destination="K4s-8M-QYV" kind="push" identifier="detalhesServico" id="Gwb-zc-vNe"/>
+                        <segue destination="VPx-Kg-xcN" kind="push" identifier="detalhesCliente" id="ArY-aA-Vk8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOu-bX-cjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470.5" y="-392.5"/>
+            <point key="canvasLocation" x="2279.5" y="-1300.5"/>
         </scene>
         <!--Detalhe Servico (fechado PRO)-->
         <scene sceneID="Qfa-a6-ufO">
@@ -954,26 +898,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oL4-x7-7ne">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <color key="barTintColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Informações do Cliente" id="kuM-Im-gi8">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="5g0-6Z-4Ts">
-                                            <connections>
-                                                <action selector="voltar:" destination="VPx-Kg-xcN" id="IH2-kv-nb5"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4d-x6-l2n">
-                                <rect key="frame" x="0.0" y="73" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Endereco:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ll-1f-alK">
                                         <rect key="frame" x="95" y="0.0" width="79" height="34"/>
@@ -995,7 +921,7 @@
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.30980392159999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Q2-Uo-Mb2">
-                                <rect key="frame" x="0.0" y="149" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cidade:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOd-Jk-0G4">
                                         <rect key="frame" x="96" y="0.0" width="79" height="34"/>
@@ -1017,7 +943,7 @@
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.30980392159999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXI-rr-6x1">
-                                <rect key="frame" x="0.0" y="225" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="216" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-pv-kPW">
                                         <rect key="frame" x="95" y="38" width="239" height="29"/>
@@ -1039,7 +965,7 @@
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.30980392159999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGv-gQ-wBb">
-                                <rect key="frame" x="0.0" y="301" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="292" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-88-XzH">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -1061,7 +987,7 @@
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.30980392159999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3DK-Ts-sda">
-                                <rect key="frame" x="0.0" y="377" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="368" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7m-Hf-TzG">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -1083,8 +1009,9 @@
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.30980392159999998" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.2196078431372549" green="0.23921568627450981" blue="0.35294117647058826" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Informações do Cliente" id="9va-8j-3ws"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="lbCidade" destination="bfV-jo-N3W" id="o0u-ad-8NE"/>
@@ -1096,7 +1023,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG4-7G-wAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1465.5" y="397.5"/>
+            <point key="canvasLocation" x="2279.5" y="-461.5"/>
         </scene>
         <!--Detalhe de serviço (histórico)-->
         <scene sceneID="sRs-Wi-1tX">
@@ -1110,26 +1037,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISq-Dz-dFp">
-                                <rect key="frame" x="0.0" y="19" width="375" height="44"/>
-                                <color key="barTintColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Detalhes do Serviço" id="CsJ-Pq-q0c">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="O5b-vi-Ta6">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="voltar:" destination="K4s-8M-QYV" id="7gG-IS-wnY"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="izS-UL-Tco">
-                                <rect key="frame" x="0.0" y="63" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="76" id="al6-tR-aOB" customClass="HOOShowAtributosTVCell">
@@ -1195,6 +1104,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalhes do Serviço" id="1qR-6Q-pdy"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="izS-UL-Tco" id="GcE-A5-nni"/>
@@ -1202,7 +1112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0S-87-gU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2109.5" y="43.5"/>
+            <point key="canvasLocation" x="2797.5" y="-1300.5"/>
         </scene>
         <!--Serviços Disponíveis-->
         <scene sceneID="zMu-3D-Zqa">
@@ -1216,33 +1126,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-hG-geS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.29411764705882354" green="0.30588235294117649" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Serviços Disponíveis" id="MFg-a7-3Fr">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="cXv-Di-lmV">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T5K-9s-LEb">
-                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Logout">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="logout:" destination="nGh-rb-Ocm" eventType="touchUpInside" id="Jb3-Rh-thH"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-fC-Jzs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.19215686274509805" green="0.24313725490196078" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="MsF-6g-jB7" customClass="HOOServicosDisponiveisTVCell">
@@ -1275,7 +1160,7 @@
                                             <outlet property="dataServico" destination="40M-Ze-SqZ" id="b4l-df-v6c"/>
                                             <outlet property="imagemServico" destination="QtB-qd-RY5" id="lVV-pw-k5l"/>
                                             <outlet property="tipoServico" destination="o0d-wj-OaE" id="uCW-uf-4PL"/>
-                                            <segue destination="tI3-SF-3sh" kind="show" id="63D-O7-MpO"/>
+                                            <segue destination="tI3-SF-3sh" kind="push" id="3JJ-9T-ABe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1288,6 +1173,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Serviços disponíveis" id="how-kv-AA9"/>
+                    <navigationItem key="navigationItem" title="Serviços Disponíveis" id="mmA-oJ-Rmw">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="2x1-zF-kcg">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logout:" destination="nGh-rb-Ocm" id="Lwi-py-cCZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableview" destination="FxH-fC-Jzs" id="fgz-41-dyC"/>
@@ -1295,7 +1188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qY4-Fc-In2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231.5" y="-1598.5"/>
+            <point key="canvasLocation" x="2279.5" y="-3008.5"/>
         </scene>
         <!--Detalhes do serviço-->
         <scene sceneID="CxY-hl-PN4">
@@ -1309,27 +1202,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CyO-kO-oaq">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Proposta" id="511-3U-96E">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="TVY-wD-qgD">
-                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="voltar:" destination="tI3-SF-3sh" id="he3-JE-idU"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Enviar" id="t4B-as-3Jx">
-                                            <color key="tintColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="enviarProposta:" destination="tI3-SF-3sh" id="jnO-t2-ouC"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Faça sua proposta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azE-Uc-brI">
+                                <rect key="frame" x="112" y="470" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Kqt-Ly-uTp">
-                                <rect key="frame" x="0.0" y="70" width="380" height="395"/>
+                                <rect key="frame" x="0.0" y="64" width="380" height="398"/>
                                 <color key="backgroundColor" red="0.19215686274509805" green="0.24313725490196078" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="76" id="wqW-zX-ohD" customClass="HOOShowAtributosTVCell">
@@ -1423,15 +1303,19 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Faça sua proposta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azE-Uc-brI">
-                                <rect key="frame" x="96" y="470" width="189" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Detalhes do Serviço" id="ZNo-1h-KiP">
+                        <barButtonItem key="rightBarButtonItem" title="Enviar" id="222-2c-Okm">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="enviarProposta:" destination="tI3-SF-3sh" id="Ut7-sq-hXd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="subviewValor" destination="IeB-hV-Zo0" id="zGX-qH-EZg"/>
@@ -1441,27 +1325,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLB-bG-ls3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2777.5" y="-1598.5"/>
+            <point key="canvasLocation" x="2797.5" y="-3008.5"/>
         </scene>
         <!--Módulo Profissional-->
         <scene sceneID="oc1-zc-2qD">
             <objects>
                 <tabBarController storyboardIdentifier="Pro" title="Módulo Profissional" id="12w-Lm-h68" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="btg-ih-3mP"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="pC5-So-IPG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="nGh-rb-Ocm" kind="relationship" relationship="viewControllers" id="FjN-oC-tZW"/>
-                        <segue destination="Jlx-KJ-5Sm" kind="relationship" relationship="viewControllers" id="Bkc-h6-8RX"/>
-                        <segue destination="JSb-9F-pMz" kind="relationship" relationship="viewControllers" id="vEe-ZA-y7f"/>
+                        <segue destination="dRb-kX-67w" kind="relationship" relationship="viewControllers" id="ttT-Qm-JN2"/>
+                        <segue destination="vUD-q1-o8j" kind="relationship" relationship="viewControllers" id="gRN-wl-I53"/>
+                        <segue destination="77k-IZ-KjZ" kind="relationship" relationship="viewControllers" id="Hox-Sy-Cwd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5si-HE-v78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="-1252"/>
+            <point key="canvasLocation" x="1766.5" y="-2140.5"/>
         </scene>
         <!--Agendar em outro endereço-->
         <scene sceneID="JhU-u3-pLg">
@@ -1481,35 +1367,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DF8-eV-OY5" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="976"/>
                                         <subviews>
-                                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQp-gY-ce8">
-                                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                                <color key="backgroundColor" red="0.1294117719" green="0.73725491759999995" blue="0.96862751250000001" alpha="1" colorSpace="deviceRGB"/>
-                                                <color key="barTintColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <textAttributes key="titleTextAttributes">
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </textAttributes>
-                                                <items>
-                                                    <navigationItem title="Detalhes do serviço" id="B38-os-LZf">
-                                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="6IU-7e-yRf">
-                                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4kc-Oa-HL0">
-                                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <state key="normal" title="Voltar">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="voltar:" destination="bhD-7x-8tV" eventType="touchUpInside" id="fVw-7p-ziD"/>
-                                                                </connections>
-                                                            </button>
-                                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </barButtonItem>
-                                                    </navigationItem>
-                                                </items>
-                                            </navigationBar>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ky5-HB-qAR">
-                                                <rect key="frame" x="0.0" y="124" width="375" height="49"/>
+                                                <rect key="frame" x="0.0" y="118" width="375" height="49"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JfI-MO-QqV">
                                                         <rect key="frame" x="8" y="9" width="359" height="30"/>
@@ -1520,7 +1379,7 @@
                                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDM-TY-uSJ">
-                                                <rect key="frame" x="0.0" y="71" width="375" height="52"/>
+                                                <rect key="frame" x="0.0" y="65" width="375" height="52"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo de serviço: ----" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmB-D5-lto">
                                                         <rect key="frame" x="25" y="16" width="320" height="21"/>
@@ -1532,7 +1391,7 @@
                                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3A-xI-XJh">
-                                                <rect key="frame" x="0.0" y="174" width="375" height="49"/>
+                                                <rect key="frame" x="0.0" y="168" width="375" height="49"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-IL-rKD">
                                                         <rect key="frame" x="8" y="9" width="359" height="30"/>
@@ -1546,7 +1405,7 @@
                                                 </accessibility>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-Gz-t3P">
-                                                <rect key="frame" x="0.0" y="224" width="375" height="246"/>
+                                                <rect key="frame" x="0.0" y="218" width="375" height="246"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvf-mh-Va1">
                                                         <rect key="frame" x="27" y="36" width="320" height="175"/>
@@ -1564,7 +1423,7 @@
                                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifZ-Av-WOo">
-                                                <rect key="frame" x="16" y="508" width="343" height="39"/>
+                                                <rect key="frame" x="16" y="502" width="343" height="39"/>
                                                 <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Agendar serviço">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1597,6 +1456,7 @@
                             <constraint firstItem="qWS-eh-SGK" firstAttribute="bottom" secondItem="wXE-7j-MDe" secondAttribute="bottomMargin" id="lg8-B7-gyb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalhes do serviço" id="Skv-Ta-MFo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="descricaoField" destination="cvf-mh-Va1" id="4Xj-oy-Yv5"/>
@@ -1607,9 +1467,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UpO-bK-vaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2699.5" y="588.5"/>
+            <point key="canvasLocation" x="3407.5" y="452.5"/>
         </scene>
-        <!--Item-->
+        <!--Serviços disponíveis-->
+        <scene sceneID="W9F-wL-ifX">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiS-TH-wl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="dRb-kX-67w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Serviços disponíveis" id="b8B-02-cjs"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bvd-hJ-3uU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nGh-rb-Ocm" kind="relationship" relationship="rootViewController" id="bmt-tO-FLS"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1757.5" y="-3008.5"/>
+        </scene>
+        <!--Detalhes do Serviço-->
         <scene sceneID="1Is-EL-6GJ">
             <objects>
                 <viewController id="boi-27-8xf" customClass="HOOAgendaMesmoEnderecoViewController" sceneMemberID="viewController">
@@ -1622,7 +1500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-6P-8TU" userLabel="subviewData">
-                                <rect key="frame" x="0.0" y="122" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uss-gD-ZZb">
                                         <rect key="frame" x="30" y="10" width="321" height="30"/>
@@ -1633,7 +1511,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pMn-NS-T65">
-                                <rect key="frame" x="0.0" y="171" width="375" height="204"/>
+                                <rect key="frame" x="0.0" y="163" width="375" height="204"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descrição:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuG-cF-Wnv">
                                         <rect key="frame" x="27" y="12" width="320" height="21"/>
@@ -1651,7 +1529,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHA-qM-kg3">
-                                <rect key="frame" x="16" y="408" width="343" height="39"/>
+                                <rect key="frame" x="16" y="400" width="343" height="39"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Agendar serviço">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1662,7 +1540,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMM-RC-vEe">
-                                <rect key="frame" x="0.0" y="72" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="49"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo de serviço: ----" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYe-bP-ncE">
                                         <rect key="frame" x="30" y="15" width="320" height="21"/>
@@ -1673,35 +1551,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDG-Oh-8I2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Detalhes do serviço" id="Bw9-5W-jkb">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="s18-3q-r9X">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="INE-Xy-5FG">
-                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Voltar">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="voltar:" destination="boi-27-8xf" eventType="touchUpInside" id="4cz-mL-aTz"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="4pl-1K-d69"/>
+                    <navigationItem key="navigationItem" title="Detalhes do Serviço" id="fxB-JM-oUQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="descricaoField" destination="cz9-vo-Kiv" id="yAV-wx-I5t"/>
@@ -1711,7 +1565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZY-sq-dOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2694.5" y="1306.5"/>
+            <point key="canvasLocation" x="2907.5" y="452.5"/>
         </scene>
         <!--Detalhes do serviço-->
         <scene sceneID="e1m-61-PL7">
@@ -1785,7 +1639,7 @@
                                         <connections>
                                             <outlet property="lbNome" destination="L7l-Q9-j9n" id="mJb-PB-8M7"/>
                                             <outlet property="lbValor" destination="wJt-IK-kWD" id="bOw-7O-pRJ"/>
-                                            <segue destination="zEy-WP-a2n" kind="show" identifier="detalhes" id="EvL-ch-7b3"/>
+                                            <segue destination="zEy-WP-a2n" kind="push" identifier="detalhes" id="GBH-PR-Laj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1794,24 +1648,6 @@
                                     <outlet property="delegate" destination="ZoW-Yp-jSD" id="uBV-BE-1Vj"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iri-K2-wwG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="textShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Detalhes do Serviço" id="Vb1-3g-HoA">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="jZI-gj-75L">
-                                            <connections>
-                                                <action selector="voltar:" destination="ZoW-Yp-jSD" id="GUF-kk-44p"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ae-A1-4Y3">
                                 <rect key="frame" x="0.0" y="216" width="375" height="120"/>
                                 <subviews>
@@ -1844,6 +1680,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalhes do Serviço" id="yz5-xO-gjX"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="labelDateAndHour" destination="BhE-qk-21w" id="l0X-78-tkY"/>
@@ -1855,9 +1692,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGp-kc-a6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2698.5" y="2098.5"/>
+            <point key="canvasLocation" x="3412.5" y="1275.5"/>
         </scene>
-        <!--Detalhes Profissional View Controller-->
+        <!--Detalhes do Profissional-->
         <scene sceneID="xZ5-XZ-6nN">
             <objects>
                 <viewController id="zEy-WP-a2n" customClass="HOODetalhesProfissionalViewController" sceneMemberID="viewController">
@@ -1869,31 +1706,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZlQ-s1-06d">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <color key="barTintColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Detalhes do Profissional" id="Pwb-yj-zSN">
-                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="nAb-4k-b4Y">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="voltar:" destination="zEy-WP-a2n" id="5cb-gj-e7b"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="OK" id="WNC-1S-5q3">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <action selector="confirmar:" destination="zEy-WP-a2n" id="9Y1-Eu-6fT"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnT-ao-0Z7">
-                                <rect key="frame" x="0.0" y="76" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZp-f5-GIx">
                                         <rect key="frame" x="84" y="8" width="51" height="21"/>
@@ -1915,7 +1729,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbO-ua-aUc">
-                                <rect key="frame" x="0.0" y="152" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Endereço:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQt-FR-xdz">
                                         <rect key="frame" x="83" y="8" width="78" height="21"/>
@@ -1937,7 +1751,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Adl-cI-qxT">
-                                <rect key="frame" x="0.0" y="228" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="216" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cidade:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqw-r2-ogg">
                                         <rect key="frame" x="83" y="8" width="59" height="21"/>
@@ -1959,7 +1773,7 @@
                                 <color key="backgroundColor" red="0.36201290870000002" green="0.38337654589999998" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mcj-N0-aXO">
-                                <rect key="frame" x="0.0" y="304" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="292" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Estado:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCk-Bn-JcY">
                                         <rect key="frame" x="83" y="8" width="58" height="21"/>
@@ -1983,6 +1797,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalhes do Profissional" id="0gQ-V5-6L9">
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="CZm-c9-9d6">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="confirmar:" destination="zEy-WP-a2n" id="8M8-a6-qVm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="lbCidade" destination="dj1-XU-hUd" id="uyi-aT-ePM"/>
@@ -1993,29 +1815,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pk7-tr-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3243.5" y="1862.5"/>
+            <point key="canvasLocation" x="3937.5" y="1275.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PzG-do-LNs">
             <objects>
                 <tabBarController storyboardIdentifier="User" id="caR-G4-CbS" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WWC-Zt-i3u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="N2A-yM-mT7" kind="relationship" relationship="viewControllers" id="70J-km-arH"/>
-                        <segue destination="nOS-4P-wca" kind="relationship" relationship="viewControllers" id="mcs-ma-LCw"/>
-                        <segue destination="h4C-eR-oSt" kind="relationship" relationship="viewControllers" id="9IY-I8-4wk"/>
+                        <segue destination="Mx6-LR-0re" kind="relationship" relationship="viewControllers" id="96G-DP-dVt"/>
+                        <segue destination="14S-TE-0HJ" kind="relationship" relationship="viewControllers" id="3lJ-e8-vo1"/>
+                        <segue destination="LSz-vh-7mz" kind="relationship" relationship="viewControllers" id="OnE-tp-dS7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upl-eZ-mny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="1740"/>
+            <point key="canvasLocation" x="1928" y="1276"/>
         </scene>
-        <!--Item-->
+        <!--Histórico de Serviço-->
+        <scene sceneID="VLk-PH-tJ3">
+            <objects>
+                <navigationController id="77k-IZ-KjZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Histórico de Serviço" id="3GY-Wx-wvl"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GDu-Pq-dFD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Jlx-KJ-5Sm" kind="relationship" relationship="rootViewController" id="0dQ-PJ-lbH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhV-OB-dNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1766.5" y="-1300.5"/>
+        </scene>
+        <!--Profissional-->
         <scene sceneID="kCs-Bd-wcR">
             <objects>
                 <viewController id="JSb-9F-pMz" customClass="HOOPerfilProfissionalViewController" sceneMemberID="viewController">
@@ -2027,29 +1868,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUx-4P-ghb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.25882352939999997" green="0.2784313725" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Profissional" id="MOV-Ux-CvI">
-                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="fnE-6I-h87">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MPY-9L-U7d">
-                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Salvar"/>
-                                                <connections>
-                                                    <action selector="salvar:" destination="JSb-9F-pMz" eventType="touchUpInside" id="tXM-tW-k2v"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-hz-8Cq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="bMB-k7-rsu" customClass="HOOCadastroClienteTVCell">
@@ -2122,6 +1942,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="z7Q-CF-OaS"/>
+                    <navigationItem key="navigationItem" title="Profissional" id="bOF-sZ-z29">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="eIz-uO-eUp">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="salvar:" destination="JSb-9F-pMz" id="dui-HB-Ub2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="cdQ-hz-8Cq" id="RvK-6f-KZ6"/>
@@ -2129,7 +1957,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6c-Ic-Gg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272.5" y="-816.5"/>
+            <point key="canvasLocation" x="2797.5" y="-2140.5"/>
+        </scene>
+        <!--Perfil-->
+        <scene sceneID="vxS-Ix-iyg">
+            <objects>
+                <navigationController id="vUD-q1-o8j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Perfil" id="Co0-PC-GOO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A0Z-pg-9gO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JSb-9F-pMz" kind="relationship" relationship="rootViewController" id="7jp-pg-AJ7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L1g-3H-KQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2279.5" y="-2140.5"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="G7l-LP-sFG">
+            <objects>
+                <navigationController id="LSz-vh-7mz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="KkI-YB-yhR"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5ok-XP-Vuk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nOS-4P-wca" kind="relationship" relationship="rootViewController" id="hxM-Hv-xpu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0R-Qj-c5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927.5" y="2129.5"/>
+        </scene>
+        <!--Agendar Serviço-->
+        <scene sceneID="8sj-66-gUN">
+            <objects>
+                <navigationController id="Mx6-LR-0re" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Agendar Serviço" id="ZG3-qt-CPE"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sxp-AS-rEP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="h4C-eR-oSt" kind="relationship" relationship="rootViewController" id="va9-kw-oLO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K07-pP-ci3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927.5" y="452.5"/>
         </scene>
     </scenes>
     <resources>

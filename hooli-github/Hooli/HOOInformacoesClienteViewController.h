@@ -13,9 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbCidade;
 @property (weak, nonatomic) IBOutlet UILabel *lbEstado;
 @property (weak, nonatomic) IBOutlet UILabel *lbEmail;
-@property (weak, nonatomic) IBOutlet UILabel *lbDDD;
 @property (weak, nonatomic) IBOutlet UILabel *lbTelefone;
-- (IBAction)voltar:(id)sender;
 
 @property (nonatomic) NSString *idServico;
 @property (nonatomic) NSString *idProposta;
