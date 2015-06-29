@@ -42,16 +42,18 @@
     }
     [self setTabBarAppearance];
 
-    
+
   
     return YES;
 }
 - (void)setTabBarAppearance {
-    [[UITabBar appearance] setBarTintColor:[UIColor lightGrayColor]];
-//    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-//    [[UITabBar appearance] setTranslucent:NO];
+    [[UITabBar appearance] setBarTintColor:[UIColor grayColor]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTranslucent:NO];
 
-    [[UINavigationBar appearance] setBarTintColor:[UIColor lightGrayColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor grayColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+
 }
 
 

@@ -64,32 +64,39 @@
 
 -(void)alerta
 {
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"O serviço vai ser feito no seu endereço cadastrado ou em outro lugar?"
+                                  message:nil
+                                  preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Deseja contratar?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
-                            @"Sim",
-                            nil];
-    popup.tag = 1;
-    [popup showInView:[UIApplication sharedApplication].keyWindow];
+    
+    
+    UIAlertAction* sim = [UIAlertAction actionWithTitle:@"Sim"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+                                    {
+                                        
+                                        [self contratar];
+                                        
+                                    }];
+    
+    UIAlertAction* cancelar = [UIAlertAction actionWithTitle:@"Cancelar"
+                                                       style:UIAlertActionStyleCancel
+                                                     handler:^(UIAlertAction * action)
+                               {
+                                   
+                                   [self dismissViewControllerAnimated:alert completion:nil];
+                                   
+                               }];
+    
+    
+    [alert addAction:sim];
+    [alert addAction:cancelar];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
-- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    switch (popup.tag) {
-        case 1: {
-            switch (buttonIndex) {
-                case 0:
-                    [self contratar];
-                    break;
-                default:
-                    break;
-            }
-            break;
-        }
-        default:
-            break;
-    }
-    
-}
 
 - (void)contratar
 {
@@ -108,10 +115,7 @@
             
             UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
                                  {
-                                     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                     HOOAgendarServicoViewController *viewController = (HOOAgendarServicoViewController *)[storyboard instantiateViewControllerWithIdentifier:@"User"];
-                                     [self presentViewController:viewController animated:YES completion:nil];
-                                     
+                                     [self.navigationController popToRootViewControllerAnimated:YES];
                                  }];
             
             
@@ -126,8 +130,6 @@
             
             }
     }];
-
-    
     
 }
 
